@@ -1,1 +1,1 @@
-C:\Projects\22068036_Jeneeya Gurung\Expense Tracking\Expense Tracking\Expense Tracking.csproj;x64
+C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\Expense Tracking.csproj;x64

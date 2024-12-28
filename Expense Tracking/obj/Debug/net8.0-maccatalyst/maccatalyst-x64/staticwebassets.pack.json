@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\obj\\Debug\\net8.0-maccatalyst\\maccatalyst-x64\\scopedcss\\bundle\\Expense Tracking.styles.css",
+      "PackagePath": "staticwebassets\\Expense Tracking.styles.css"
+    },
+    {
+      "Id": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-maccatalyst\\maccatalyst-x64\\staticwebassets\\msbuild.Expense Tracking.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-maccatalyst\\maccatalyst-x64\\staticwebassets\\msbuild.build.Expense Tracking.props",
+      "PackagePath": "build\\Expense Tracking.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-maccatalyst\\maccatalyst-x64\\staticwebassets\\msbuild.buildMultiTargeting.Expense Tracking.props",
+      "PackagePath": "buildMultiTargeting\\Expense Tracking.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-maccatalyst\\maccatalyst-x64\\staticwebassets\\msbuild.buildTransitive.Expense Tracking.props",
+      "PackagePath": "buildTransitive\\Expense Tracking.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

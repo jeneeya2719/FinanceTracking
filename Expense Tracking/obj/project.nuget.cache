@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Gei1KSWNZb4=",
+  "dgSpecHash": "+ziLslD9IN0=",
   "success": true,
-  "projectFilePath": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\Expense Tracking.csproj",
+  "projectFilePath": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\Expense Tracking.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bhtha\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",
     "C:\\Users\\bhtha\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.10\\microsoft.aspnetcore.authorization.8.0.10.nupkg.sha512",

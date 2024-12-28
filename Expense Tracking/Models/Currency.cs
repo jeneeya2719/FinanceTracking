@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Expense_Tracking.Enums;
 
 namespace Expense_Tracking.Models
 {
     public class Currency
     {
         public Guid CurrencyId { get; set; } = Guid.NewGuid();
-        public string CurrencyCode { get; set; }
-
+        public CurrencyCode CurrencyCode { get; set; }
+        public string CurrencyName { get; set; }
         public ICollection<User> Users { get; set; }
     }
 }

@@ -1,0 +1,40 @@
+﻿@page "/Login"
+
+<div class="form-login">
+    <form class="text-center" @onsubmit="HandleLogin">
+        <img class="mb-4" src="/appicon.png" alt="" height="72">
+        <h1 class="h3 mb-3 fw-normal">Please Login</h1>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" @bind="Users.UserName" placeholder="Username" />
+            <label for="floatingInput">Username</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" @bind="Users.Password" placeholder="Password" />
+            <label for="floatingPassword">Password</label>
+        </div>
+
+        <!-- Currency Dropdown -->
+        <div class="form-floating mb-3">
+            <select class="form-select" @bind="Users.CurrencyId">
+                <option value="" disabled>Select Currency</option>
+                @foreach (var currency in Currencies)
+                {
+                    <option value="@currency.CurrencyId">@currency.CurrencyName (@currency.CurrencyCode)</option>
+                }
+            </select>
+            <label for="floatingCurrency">Currency</label>
+        </div>
+
+        <!-- Error message -->
+        @if (!string.IsNullOrEmpty(ErrorMessage))
+        {
+            <div class="alert alert-danger">@ErrorMessage</div>
+        }
+
+        <button class="btn btn-lg btn-primary">
+            Login
+        </button>
+    </form>
+</div>

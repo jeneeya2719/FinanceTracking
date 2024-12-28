@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Expense_Tracking.Services.Interface;
+using Microsoft.Extensions.Logging;
 
 namespace Expense_Tracking
 {
@@ -15,10 +16,10 @@ namespace Expense_Tracking
                 });
 
             builder.Services.AddMauiBlazorWebView();
-
+            builder.Services.AddScoped<IUserService, UserService>();
 #if DEBUG
-    		builder.Services.AddBlazorWebViewDeveloperTools();
-    		builder.Logging.AddDebug();
+            builder.Services.AddBlazorWebViewDeveloperTools();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

@@ -44093,11 +44093,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\Expense Tracking.csproj",
+      "projectUniqueName": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\Expense Tracking.csproj",
       "projectName": "Expense Tracking",
-      "projectPath": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\Expense Tracking.csproj",
+      "projectPath": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\Expense Tracking.csproj",
       "packagesPath": "C:\\Users\\bhtha\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\obj\\",
+      "outputPath": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

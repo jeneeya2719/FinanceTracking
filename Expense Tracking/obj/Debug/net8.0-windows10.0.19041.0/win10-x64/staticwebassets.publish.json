@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "o5Nz7093gXdWrH7ZItTOdNQrZObwLj7iPMmPdQCQDe0=",
+  "Hash": "4G+R4Iksr7oOzU5RADXBcLyAjVOVpkdHUc5orRmOLS8=",
   "Source": "Expense Tracking",
   "BasePath": "/",
   "Mode": "Root",
@@ -10,17 +10,17 @@
     {
       "Name": "Expense Tracking\\wwwroot",
       "Source": "Expense Tracking",
-      "ContentRoot": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\wwwroot\\",
       "BasePath": "/",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\Expense Tracking.styles.css",
+      "Identity": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\Expense Tracking.styles.css",
       "SourceId": "Expense Tracking",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\",
       "BasePath": "/",
       "RelativePath": "Expense Tracking.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\Expense Tracking.styles.css"
+      "OriginalItemSpec": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\Expense Tracking.styles.css"
     },
     {
-      "Identity": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\Expense Tracking.bundle.scp.css",
+      "Identity": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\Expense Tracking.bundle.scp.css",
       "SourceId": "Expense Tracking",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\",
       "BasePath": "/",
       "RelativePath": "Expense Tracking.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\Expense Tracking.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\Expense Tracking.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\wwwroot\\css\\app.css",
+      "Identity": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\wwwroot\\css\\app.css",
       "SourceId": "Expense Tracking",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/app.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\css\\app.css"
     },
     {
-      "Identity": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "Expense Tracking",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "Expense Tracking",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\wwwroot\\favicon.png",
+      "Identity": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\wwwroot\\favicon.png",
       "SourceId": "Expense Tracking",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
-      "Identity": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\wwwroot\\index.html",
+      "Identity": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\wwwroot\\index.html",
       "SourceId": "Expense Tracking",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\22068036_Jeneeya Gurung\\Expense Tracking\\Expense Tracking\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\ExpenseTracking\\Expense Tracking\\Expense Tracking\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "index.html",
       "AssetKind": "All",
