@@ -9,16 +9,18 @@ namespace Expense_Tracking.Components.Pages
         private Guid SelectedCurrencyId { get; set; }
         private string ErrorMessge { get; set; }
 
+        // Initialization of available currencies
         protected override async Task OnInitializedAsync()
         {
-            AvailableCurrencies = CurrencyService.GetCurrencies();
+            AvailableCurrencies = UserService.GetCurrencies();  // Get currencies directly from UserService
             if (AvailableCurrencies.Any())
             {
                 SelectedCurrencyId = AvailableCurrencies.First().CurrencyId;
             }
         }
 
-         private void  HandleLogin()
+        // Handle login logic
+        private void HandleLogin()
         {
             if (string.IsNullOrEmpty(Users.UserName) || string.IsNullOrEmpty(Users.Password) || SelectedCurrencyId == Guid.Empty)
             {
@@ -31,7 +33,7 @@ namespace Expense_Tracking.Components.Pages
             bool isValid = UserService.Login(Users);
             if (isValid)
             {
-                Nav.NavigateTo("/home"); 
+                Nav.NavigateTo("/home");
             }
             else
             {

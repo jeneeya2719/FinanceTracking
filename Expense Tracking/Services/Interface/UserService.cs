@@ -1,16 +1,27 @@
-﻿using Expense_Tracking.Abstraction;
+﻿using Expense_Tracking.Enums;
 using Expense_Tracking.Models;
+using Expense_Tracking.Services.Interface;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Expense_Tracking.Services.Interface
+namespace Expense_Tracking.Services
 {
-    public class UserService : UserBase, IUserService
+    public class UserService : IUserService
     {
         private readonly List<User> _users;
+        private static readonly List<Currency> _currencies = new()
+        {
+            new Currency { CurrencyId = Guid.NewGuid(), CurrencyCode = CurrencyCode.NPR },
+            new Currency { CurrencyId = Guid.NewGuid(), CurrencyCode = CurrencyCode.USD },
+            new Currency { CurrencyId = Guid.NewGuid(), CurrencyCode = CurrencyCode.EUR },
+            new Currency { CurrencyId = Guid.NewGuid(), CurrencyCode = CurrencyCode.AUD }
+        };
 
         public const string SeedUsername = "admin";
         public const string SeedPassword = "password";
 
-        public UserService(ICurrencyService currencyService)
+        public UserService()
         {
             _users = LoadUsers();
 
@@ -21,7 +32,7 @@ namespace Expense_Tracking.Services.Interface
             }
         }
 
-
+        // Method to handle user login and validate credentials
         public bool Login(User user)
         {
             if (string.IsNullOrEmpty(user.UserName) || string.IsNullOrEmpty(user.Password))
@@ -29,9 +40,32 @@ namespace Expense_Tracking.Services.Interface
                 return false;
             }
 
-            return _users.Any(u =>
+            var authenticatedUser = _users.FirstOrDefault(u =>
                 u.UserName == user.UserName &&
-                u.Password == user.Password);  
+                u.Password == user.Password);  //till here
+
+            if (authenticatedUser != null)
+            {
+                // Assign currency to the user after successful login
+                user.CurrencyId = authenticatedUser.CurrencyId;
+                return true;
+            }
+
+            return false;
+        }
+
+        // Method to fetch available currencies
+        public List<Currency> GetCurrencies() => _currencies;
+
+        private List<User> LoadUsers()
+        {
+            // Load from file or database (as required)
+            return new List<User>();
+        }
+
+        private void SaveUsers(List<User> users)
+        {
+            // Save users to file or database (as required)
         }
     }
 }
