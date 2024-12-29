@@ -1,13 +1,11 @@
-﻿using Expense_Tracking.Enums;
+﻿using Expense_Tracking.Abstraction;
+using Expense_Tracking.Enums;
 using Expense_Tracking.Models;
 using Expense_Tracking.Services.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Expense_Tracking.Services
 {
-    public class UserService : IUserService
+    public class UserService : UserBase, IUserService
     {
         private readonly List<User> _users;
         private static readonly List<Currency> _currencies = new()
@@ -56,16 +54,5 @@ namespace Expense_Tracking.Services
 
         // Method to fetch available currencies
         public List<Currency> GetCurrencies() => _currencies;
-
-        private List<User> LoadUsers()
-        {
-            // Load from file or database (as required)
-            return new List<User>();
-        }
-
-        private void SaveUsers(List<User> users)
-        {
-            // Save users to file or database (as required)
-        }
     }
 }

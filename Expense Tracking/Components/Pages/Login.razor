@@ -1,41 +1,143 @@
 ﻿@page "/login"
 
-<div class="form-login">
-    <form class="text-center" @onsubmit="HandleLogin">
-        <img class="mb-4" src="/appicon.png" alt="" height="72">
-        <h1 class="h3 mb-3 fw-normal">Please Login</h1>
+<main>
+    <div class="form-login-container">
+        <!-- Left Image Section -->
+        <div class="login-image">
+            <img src="../Images/login.jpg" alt="Login Illustration" />
 
-        <!-- Username Input -->
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" @bind="Users.UserName" placeholder="Username" />
-            <label for="floatingInput">Username</label>
         </div>
 
-        <!-- Password Input -->
-        <div class="form-floating mb-3">
-            <input type="password" class="form-control" @bind="Users.Password" placeholder="Password" />
-            <label for="floatingPassword">Password</label>
-        </div>
+        <!-- Right Form Section -->
+        <div class="form-login">
+            <form class="text-center" @onsubmit="HandleLogin">
+                <h1 class="h3 mb-3 fw-normal">Please Login</h1>
 
-        <!-- Currency Dropdown -->
-        <div class="form-floating mb-3">
-            <select class="form-control" @bind="SelectedCurrencyId">
-                @foreach (var currency in AvailableCurrencies)
+                <!-- Username Input -->
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" @bind="Users.UserName" placeholder="Username" />
+                    <label for="floatingInput">Username</label>
+                </div>
+
+                <!-- Password Input -->
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" @bind="Users.Password" placeholder="Password" />
+                    <label for="floatingPassword">Password</label>
+                </div>
+
+                <!-- Currency Dropdown -->
+                <div class="form-floating mb-3">
+                    <select class="form-control" @bind="SelectedCurrencyId">
+                        @foreach (var currency in AvailableCurrencies)
+                        {
+                            <option value="@currency.CurrencyId">@currency.CurrencyCode</option>
+                        }
+                    </select>
+                    <label for="currencySelect">Currency</label>
+                </div>
+
+                @if (!string.IsNullOrEmpty(ErrorMessge))
                 {
-                    <option value="@currency.CurrencyId">@currency.CurrencyCode</option>
+                    <div class="alert alert-danger">@ErrorMessge</div>
                 }
-            </select>
-            <label for="currencySelect">Currency</label>
-        </div>
 
-        @if (!string.IsNullOrEmpty(ErrorMessge))
-        {
-            <div class="alert alert-danger">@ErrorMessge</div>
+                <!-- Login Button -->
+                <button class="btn btn-lg btn-login">
+                    Login
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<style>
+    /* Centering the form vertically and horizontally */
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f9f9f9;
+    }
+
+    /* Layout for the login container */
+    .form-login-container {
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        max-width: 1000px; /* Increased max width for the container */
+        width: 100%;
+    }
+
+    /* Left Image Section */
+    .login-image {
+        flex: 1;
+        background-color: #eef2f3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .login-image img {
+           width: 100%; /* Adjust image to fill the container */
+    max-width: 400px; /* Set a maximum width for the image */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensures the image scales properly */
+    padding: 20px; /* Optional padding for better spacing */
         }
 
-        <!-- Login Button -->
-        <button class="btn btn-lg btn-primary">
-            Login
-        </button>
-    </form>
-</div>
+    /* Right Form Section */
+    .form-login {
+        flex: 1.5; /* Increased the proportion of form width */
+        padding: 60px; /* Added more padding for a spacious look */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Form Heading */
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 20px;
+        color: black; /* Changed color to black */
+    }
+
+    /* Input Fields Styling */
+    .form-floating input,
+    .form-floating select {
+        width: 100%;
+        padding: 12px; /* Adjusted padding for inputs */
+        margin: 10px 0;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+    /* Button Styling */
+    .btn-login {
+        width: 100%;
+        padding: 12px;
+        background-color: #2a9d8f;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+        .btn-login:hover {
+            background-color: #258e7a;
+        }
+
+    /* Error Message Styling */
+    .alert {
+        background-color: #ff4d4d42;
+        padding: 10px;
+        border-radius: 4px;
+        color: darkred;
+    }
+</style>
