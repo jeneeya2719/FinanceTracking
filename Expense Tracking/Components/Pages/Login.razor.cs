@@ -4,37 +4,38 @@ namespace Expense_Tracking.Components.Pages
 {
     public partial class Login
     {
-        private string? ErrorMessage;
-        public User Users { get; set; } = new();
-        private List<Currency> Currencies { get; set; } = new(); // List to hold currencies
+        private User Users = new User();
+        private List<Currency> AvailableCurrencies { get; set; } = new List<Currency>();
+        private Guid SelectedCurrencyId { get; set; }
+        private string ErrorMessge { get; set; }
 
-        //[Inject] public UserService UserService { get; set; } // Inject UserService
-        //[Inject] public NavigationManager Nav { get; set; } // Inject NavigationManager to navigate to home
-
-        // On Initialization, load the currencies from the service
-        protected override void OnInitialized()
+        protected override async Task OnInitializedAsync()
         {
-            Currencies = UserService.GetCurrencies(); // Get available currencies for dropdown
+            AvailableCurrencies = CurrencyService.GetCurrencies();
+            if (AvailableCurrencies.Any())
+            {
+                SelectedCurrencyId = AvailableCurrencies.First().CurrencyId;
+            }
         }
 
-        // Handle the login action
-        private void HandleLogin()
+         private void  HandleLogin()
         {
-            // Ensure the user has selected a valid currency, username, and password
-            if (string.IsNullOrEmpty(Users.UserName) || string.IsNullOrEmpty(Users.Password) || Users.CurrencyId == Guid.Empty)
+            if (string.IsNullOrEmpty(Users.UserName) || string.IsNullOrEmpty(Users.Password) || SelectedCurrencyId == Guid.Empty)
             {
-                ErrorMessage = "All fields are required.";
+                ErrorMessge = "Please fill all fields.";
                 return;
             }
 
-            // Check login credentials
-            if (UserService.Login(Users))
+            Users.CurrencyId = SelectedCurrencyId; // Set the currency to the user object
+
+            bool isValid = UserService.Login(Users);
+            if (isValid)
             {
-                Nav.NavigateTo("/home"); // Redirect to home on successful login
+                Nav.NavigateTo("/home"); 
             }
             else
             {
-                ErrorMessage = "Invalid username, password, or currency selection."; // Error message on failure
+                ErrorMessge = "Invalid login credentials.";
             }
         }
     }

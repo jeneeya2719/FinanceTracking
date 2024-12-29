@@ -2,9 +2,8 @@
 
 namespace Expense_Tracking.Services.Interface
 {
-    public interface IUserService
+    public interface ICurrencyService
     {
-        bool Login(User user);
+        List<Currency> GetCurrencies();
     }
-
 }

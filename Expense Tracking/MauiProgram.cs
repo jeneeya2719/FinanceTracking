@@ -17,6 +17,7 @@ namespace Expense_Tracking
 
             builder.Services.AddMauiBlazorWebView();
             builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<ICurrencyService, CurrencyService>();
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();
             builder.Logging.AddDebug();

@@ -6,8 +6,7 @@ namespace Expense_Tracking.Components.Pages
     {
         protected override void OnInitialized()
         {
-            base.OnInitialized();
-            Nav.NavigateTo("/Login");
+            Nav.NavigateTo("/login");
         }
 
     }
