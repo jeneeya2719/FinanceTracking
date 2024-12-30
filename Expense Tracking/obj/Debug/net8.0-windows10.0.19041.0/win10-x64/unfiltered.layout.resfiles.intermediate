@@ -1,5 +1,6 @@
 Components\Layout\MainLayout.razor.css
 Components\Layout\NavMenu.razor.css
+Components\Pages\Home.razor.css
 Components\Pages\Login.razor.css
 OpenSans-Regular.ttf
 appicon.ico

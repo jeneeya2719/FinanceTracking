@@ -529,6 +529,9 @@
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\Components\Layout\NavMenu.razor.css">
       <PackagePath>Components\Layout\NavMenu.razor.css</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\Components\Pages\Home.razor.css">
+      <PackagePath>Components\Pages\Home.razor.css</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\Components\Pages\Login.razor.css">
       <PackagePath>Components\Pages\Login.razor.css</PackagePath>
     </AppxPackagedFile>

@@ -178,4 +178,30 @@ main[b-3u6h12oqre] {
         overflow-y: auto;
     }
 }
+/* /Components/Pages/Home.razor.rz.scp.css */
+body[b-cakbzgbecl] {
+.sidebar .nav-link:hover
+
+{
+    background-color: #2a9d8f;
+    color: white;
+}
+
+.nav-link[b-cakbzgbecl] {
+    padding-left: 25px;
+}
+
+.sidebar-header h3[b-cakbzgbecl] {
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.nav-link i[b-cakbzgbecl] {
+    margin-right: 10px;
+}
+
+.nav-item[b-cakbzgbecl] {
+    margin-bottom: 20px;
+}
+}
 /* /Components/Pages/Login.razor.rz.scp.css */

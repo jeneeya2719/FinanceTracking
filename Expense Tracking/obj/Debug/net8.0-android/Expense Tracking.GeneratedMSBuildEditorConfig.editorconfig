@@ -46,13 +46,6 @@ build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJh
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/ExpenseTracking/Expense Tracking/Expense Tracking/Components/Pages/Home.razor]
-build_metadata.AdditionalFiles.GenKind = 
-build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
-build_metadata.AdditionalFiles.RelativePath = 
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Projects/ExpenseTracking/Expense Tracking/Expense Tracking/Components/Pages/Index.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
@@ -94,6 +87,13 @@ build_metadata.AdditionalFiles.ManifestResourceName =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-opgspotzeb
+
+[C:/Projects/ExpenseTracking/Expense Tracking/Expense Tracking/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = b-cakbzgbecl
 
 [C:/Projects/ExpenseTracking/Expense Tracking/Expense Tracking/Components/Pages/Login.razor]
 build_metadata.AdditionalFiles.GenKind = 
