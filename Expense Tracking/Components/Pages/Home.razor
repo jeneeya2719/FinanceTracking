@@ -1,5 +1,72 @@
-﻿@page "/home"
+﻿@page "/dashboard"
 
-<h1>Hello, world!</h1>
+<div class="d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar" style="width: 300px; height: 100vh; position: fixed; left: 0; background: linear-gradient(180deg, #0d1f2d, #1b2b46, #2a9d8f); padding-top: 20px;">
+        <div class="sidebar-header text-center mb-4">
+            <h3 class="text-white">Dashboard</h3>
+        </div>
+        <ul class="nav flex-column">
+            <li class="nav-item mb-3">
+                <a class="nav-link text-white" href="#">
+                    <i class="bi bi-house-door-fill"></i> Home
+                </a>
+            </li>
+            <li class="nav-item mb-3">
+                <a class="nav-link text-white" href="#">
+                    <i class="bi bi-currency-exchange"></i> Transaction
+                </a>
+            </li>
+            <li class="nav-item mb-3">
+                <a class="nav-link text-white" href="#">
+                    <i class="bi bi-credit-card"></i> Debt
+                </a>
+            </li>
+            <li class="nav-item mb-3">
+                <a class="nav-link text-white" href="#">
+                    <i class="bi bi-pencil-square"></i> Update Detail
+                </a>
+            </li>
+            <li class="nav-item mb-3">
+                <a class="nav-link text-white" href="#">
+                    <i class="bi bi-box-arrow-right"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
 
-Welcome to your new app.
+    <!-- Main Content -->
+    <div class="content" style="margin-left: 300px; padding: 20px;">
+        <h1>Welcome to the Dashboard</h1>
+        <p>Your content goes here. You can add more sections here as needed.</p>
+    </div>
+</div>
+
+@code {
+    
+}
+
+<style>
+    .sidebar .nav-link:hover {
+        background-color: #2a9d8f;
+        color: white;
+    }
+
+    .nav-link {
+        padding-left: 25px;
+    }
+
+    .sidebar-header h3 {
+        margin-top: 20px;
+        font-size: 1.5rem;
+    }
+
+    .nav-link i {
+        margin-right: 10px;
+    }
+
+    /* Added spacing between nav items */
+    .nav-item {
+        margin-bottom: 20px; 
+    }
+</style>

@@ -16,8 +16,8 @@ namespace Expense_Tracking.Services
             new Currency { CurrencyId = Guid.NewGuid(), CurrencyCode = CurrencyCode.AUD }
         };
 
-        public const string SeedUsername = "admin";
-        public const string SeedPassword = "password";
+        public const string SeedUsername = "jeneey";
+        public const string SeedPassword = "jeneey";
 
         public UserService()
         {
@@ -54,5 +54,20 @@ namespace Expense_Tracking.Services
 
         // Method to fetch available currencies
         public List<Currency> GetCurrencies() => _currencies;
+
+        
+
+        //after second seeding error occur so this method call, which check is the list is empty, reload users and save the updated users
+        //Withoout this method in memory the first seeded value store and dont get updated.
+        private List<User> LoadUsers()
+        {
+            return new List<User>(); 
+        }
+
+        // Save users to persistent storage
+        private void SaveUsers(List<User> users)
+        {
+            
+        }
     }
 }

@@ -30,25 +30,25 @@
     <AppXManifest Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-12-29T17:08:14.188</Modified>
+      <Modified>2024-12-30T08:16:57.486</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-12-29T16:56:31.616</Modified>
+      <Modified>2024-12-30T06:20:45.901</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Expense Tracking.runtimeconfig.json">
       <PackagePath>Expense Tracking.runtimeconfig.json</PackagePath>
-      <Modified>2024-12-29T16:02:19.006</Modified>
+      <Modified>2024-12-30T06:23:02.888</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Expense Tracking.dll">
       <PackagePath>Expense Tracking.dll</PackagePath>
-      <Modified>2024-12-29T17:08:13.900</Modified>
+      <Modified>2024-12-30T08:16:56.930</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Expense Tracking.exe</PackagePath>
-      <Modified>2024-12-29T17:08:13.908</Modified>
+      <Modified>2024-12-30T08:16:56.943</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -72,7 +72,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\wwwroot\index.html">
       <PackagePath>wwwroot\index.html</PackagePath>
-      <Modified>2024-12-29T15:42:38.531</Modified>
+      <Modified>2024-12-30T07:51:27.616</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
@@ -304,7 +304,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Expense Tracking.deps.json">
       <PackagePath>Expense Tracking.deps.json</PackagePath>
-      <Modified>2024-12-29T16:56:31.387</Modified>
+      <Modified>2024-12-30T06:23:02.780</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhtha\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.53\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
@@ -684,11 +684,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\Expense Tracking.styles.css">
       <PackagePath>wwwroot\Expense Tracking.styles.css</PackagePath>
-      <Modified>2024-12-18T08:29:21.264</Modified>
+      <Modified>2024-12-30T06:22:27.852</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\Expense Tracking.bundle.scp.css">
       <PackagePath>wwwroot\Expense Tracking.bundle.scp.css</PackagePath>
-      <Modified>2024-12-18T08:29:21.265</Modified>
+      <Modified>2024-12-30T06:22:27.854</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhtha\.nuget\packages\mudblazor\7.15.0\staticwebassets\MudBlazor.min.css">
       <PackagePath>wwwroot\_content\MudBlazor\MudBlazor.min.css</PackagePath>
@@ -705,6 +705,10 @@
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\Components\Layout\NavMenu.razor.css">
       <PackagePath>Components\Layout\NavMenu.razor.css</PackagePath>
       <Modified>2024-12-18T08:29:18.022</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\Components\Pages\Login.razor.css">
+      <PackagePath>Components\Pages\Login.razor.css</PackagePath>
+      <Modified>2024-12-30T06:22:24.738</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

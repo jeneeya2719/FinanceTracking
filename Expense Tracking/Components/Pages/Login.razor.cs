@@ -33,7 +33,7 @@ namespace Expense_Tracking.Components.Pages
             bool isValid = UserService.Login(Users);
             if (isValid)
             {
-                Nav.NavigateTo("/home");
+                Nav.NavigateTo("/dashboard");
             }
             else
             {

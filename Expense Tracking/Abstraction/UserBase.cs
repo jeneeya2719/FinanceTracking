@@ -12,6 +12,7 @@ namespace Expense_Tracking.Abstraction
             if (!File.Exists(FilePath)) return new List<User>();
             var json = File.ReadAllText(FilePath);
             return JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
+
         }
 
         protected void SaveUsers(List<User> users)
