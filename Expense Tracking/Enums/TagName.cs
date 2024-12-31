@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Expense_Tracking.Enums
 {
-    public enum Tag
+    public enum TagName
     {
         Yearly,
         Monthly,
@@ -14,7 +14,6 @@ namespace Expense_Tracking.Enums
         Drinks,
         Clothes,
         Gadgets,
-        Miscellaneous,
         Fuel,
         Rent,
         EMI,

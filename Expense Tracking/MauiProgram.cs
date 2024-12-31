@@ -20,6 +20,8 @@ namespace Expense_Tracking
 
             builder.Services.AddMauiBlazorWebView();
             builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<ITransactionService, TransactionService>();
             builder.Services.AddMudServices();
 
 

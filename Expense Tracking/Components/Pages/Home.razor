@@ -13,9 +13,9 @@
                 </NavLink>
             </li>
             <li class="nav-item mb-3">
-                <NavLink class="nav-link text-white" href="/transaction" ActiveClass="active">
+                <button class="nav-link text-white" style="background:none; border:none;" @onclick="ShowTransactionPage">
                     <i class="bi bi-currency-exchange"></i> Transaction
-                </NavLink>
+                </button>
             </li>
             <li class="nav-item mb-3">
                 <NavLink class="nav-link text-white" href="/debt" ActiveClass="active">
@@ -38,10 +38,32 @@
     <!-- Main Content -->
     <div class="content" style="margin-left: 300px; padding: 20px;">
         <h1>Welcome to the Dashboard</h1>
-        <p>Your content goes here. You can add more sections here as needed.</p>
+        
+
+        <!-- Show Transaction Page Content -->
+        @if (isTransactionPageVisible)
+        {
+            <nav class="navbar navbar-light bg-light justify-content-between">
+                <h1 class="navbar-brand mb-0 h1">Transactions</h1>
+                <button class="btn btn-primary" type="button" @onclick="OpenAddTodoDialog">
+                    <span class="oi oi-plus" /> Add Transaction
+                </button>
+            </nav>
+
+            <!-- Add Todo Dialog  -->
+            @if (isAddTodoDialogOpen)
+            {
+                <div class="modal">
+                    <div class="modal-content">
+                        <span @onclick="CloseAddTodoDialog" class="close-button">&times;</span>
+                        <h2>Add Todo</h2>
+                        <input type="text" placeholder="Enter todo..." @bind="newTodoTitle" />
+                        <button @onclick="AddTodo">Add Todo</button>
+                    </div>
+                </div>
+            }
+
+
+        }
     </div>
 </div>
-
-
-
-

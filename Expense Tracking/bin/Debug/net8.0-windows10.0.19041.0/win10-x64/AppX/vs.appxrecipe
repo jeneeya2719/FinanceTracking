@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-12-30T09:11:14.193</Modified>
+      <Modified>2024-12-31T08:15:31.354</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-12-30T08:59:53.264</Modified>
+      <Modified>2024-12-31T04:28:24.363</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Expense Tracking.runtimeconfig.json">
       <PackagePath>Expense Tracking.runtimeconfig.json</PackagePath>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Expense Tracking.dll">
       <PackagePath>Expense Tracking.dll</PackagePath>
-      <Modified>2024-12-30T09:11:12.588</Modified>
+      <Modified>2024-12-31T08:15:30.811</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Expense Tracking.exe</PackagePath>
-      <Modified>2024-12-30T09:11:12.776</Modified>
+      <Modified>2024-12-31T08:15:30.825</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -304,7 +304,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Expense Tracking.deps.json">
       <PackagePath>Expense Tracking.deps.json</PackagePath>
-      <Modified>2024-12-30T09:11:13.668</Modified>
+      <Modified>2024-12-31T04:28:23.771</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhtha\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.53\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
