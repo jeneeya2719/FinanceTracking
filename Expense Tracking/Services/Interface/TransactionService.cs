@@ -1,68 +1,115 @@
-﻿using Expense_Tracking.Models;
+﻿using Expense_Tracking.Abstraction;
+using Expense_Tracking.Models;
 using Expense_Tracking.Services.Interface;
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
-using System.Linq;
 
 namespace Expense_Tracking.Services
 {
-    public class TransactionService : ITransactionService
+    public class TransactionService : UserBase, ITransactionService
     {
-        private static readonly string FilePath = Path.Combine(FileSystem.AppDataDirectory, "transactions.json");
-
-        // Load transactions from the JSON file
-        public async Task<List<Transaction>> GetTransactionsAsync()
+        private static async Task SaveAllAsync(Guid userId, List<Transaction> transactions)
         {
-            if (!File.Exists(FilePath)) return new List<Transaction>();
-            var json = await File.ReadAllTextAsync(FilePath);
-            return JsonSerializer.Deserialize<List<Transaction>>(json) ?? new List<Transaction>();
-        }
+            string appDataDirectoryPath = UserBase.GetAppDirectoryPath();
+            string todosFilePath = UserBase.GetTodosFilePath(userId);
 
-        // Add a transaction to the list and save to JSON
-        public async Task AddTransactionAsync(Transaction transaction)
-        {
-            var transactions = await GetTransactionsAsync();
-            transactions.Add(transaction);
-            await SaveTransactionsAsync(transactions);
-        }
-
-        // Update an existing transaction
-        public async Task UpdateTransactionAsync(Transaction transaction)
-        {
-            var transactions = await GetTransactionsAsync();
-            var existingTransaction = transactions.FirstOrDefault(t => t.TransactionId == transaction.TransactionId);
-
-            if (existingTransaction != null)
+            if (!Directory.Exists(appDataDirectoryPath))
             {
-                existingTransaction.TransactionTitle = transaction.TransactionTitle;
-                existingTransaction.TransactionType = transaction.TransactionType;
-                existingTransaction.Source = transaction.Source;
-                existingTransaction.TransactionAmount = transaction.TransactionAmount;
-                existingTransaction.Date = transaction.Date;
-                existingTransaction.Remarks = transaction.Remarks;
-                await SaveTransactionsAsync(transactions);
+                Directory.CreateDirectory(appDataDirectoryPath);
             }
+
+            var json = JsonSerializer.Serialize(transactions);
+            await File.WriteAllTextAsync(todosFilePath, json);
         }
 
-        // Delete a transaction
-        public async Task DeleteTransactionAsync(Guid transactionId)
+        public async Task<List<Transaction>> GetAllAsync(Guid userId, string tabFilter, string sortBy, string sortDirection, string searchTerm)
         {
-            var transactions = await GetTransactionsAsync();
-            var transactionToDelete = transactions.FirstOrDefault(t => t.TransactionId == transactionId);
-
-            if (transactionToDelete != null)
+            string todosFilePath = UserBase.GetTodosFilePath(userId);
+            if (!File.Exists(todosFilePath))
             {
-                transactions.Remove(transactionToDelete);
-                await SaveTransactionsAsync(transactions);
+                return new List<Transaction>();
             }
+
+            var json = await File.ReadAllTextAsync(todosFilePath);
+            var transactions = JsonSerializer.Deserialize<List<Transaction>>(json) ?? new List<Transaction>();
+
+            // Apply filters and sorting (you can extend these based on your needs)
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                transactions = transactions.Where(t => t.TaskName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+
+            if (sortBy == "DueDate")
+            {
+                transactions = sortDirection == "asc"
+                    ? transactions.OrderBy(t => t.DueDate).ToList()
+                    : transactions.OrderByDescending(t => t.DueDate).ToList();
+            }
+
+            return transactions;
         }
 
-        // Save the list of transactions to the JSON file
-        private async Task SaveTransactionsAsync(List<Transaction> transactions)
+        public async Task<List<Transaction>> CreateAsync(Guid userId, string taskName, DateTime dueDate)
         {
-            var json = JsonSerializer.Serialize(transactions, new JsonSerializerOptions { WriteIndented = true });
-            await File.WriteAllTextAsync(FilePath, json);
+            if (dueDate < DateTime.Today)
+            {
+                throw new Exception("Due date must be in the future.");
+            }
+
+            List<Transaction> transactions = await GetAllAsync(userId, string.Empty, string.Empty, string.Empty, string.Empty);
+            transactions.Add(new Transaction
+            {
+                TaskName = taskName,
+                DueDate = dueDate,
+                CreatedBy = userId
+            });
+            await SaveAllAsync(userId, transactions);
+            return transactions;
+        }
+
+        public async Task<List<Transaction>> UpdateAsync(Guid userId, Guid id, string taskName, DateTime dueDate, bool isDone)
+        {
+            List<Transaction> transactions = await GetAllAsync(userId, string.Empty, string.Empty, string.Empty, string.Empty);
+            Transaction transactionToUpdate = transactions.FirstOrDefault(x => x.Id == id);
+
+            if (transactionToUpdate == null)
+            {
+                throw new Exception("Transaction not found.");
+            }
+
+            transactionToUpdate.TaskName = taskName;
+            transactionToUpdate.IsDone = isDone;
+            transactionToUpdate.DueDate = dueDate;
+            await SaveAllAsync(userId, transactions);
+            return transactions;
+        }
+
+        public async Task<List<Transaction>> DeleteAsync(Guid userId, Guid id)
+        {
+            List<Transaction> transactions = await GetAllAsync(userId, string.Empty, string.Empty, string.Empty, string.Empty);
+            Transaction transaction = transactions.FirstOrDefault(x => x.Id == id);
+
+            if (transaction == null)
+            {
+                throw new Exception("Transaction not found.");
+            }
+
+            transactions.Remove(transaction);
+            await SaveAllAsync(userId, transactions);
+            return transactions;
+        }
+
+        public async Task DeleteByUserIdAsync(Guid userId)
+        {
+            string todosFilePath = UserBase.GetTodosFilePath(userId);
+            if (File.Exists(todosFilePath))
+            {
+                await Task.Run(() => File.Delete(todosFilePath)); // File delete task
+            }
         }
     }
 }

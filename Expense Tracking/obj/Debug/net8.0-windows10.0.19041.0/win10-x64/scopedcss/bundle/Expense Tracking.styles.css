@@ -205,3 +205,20 @@ body[b-cakbzgbecl] {
 }
 }
 /* /Components/Pages/Login.razor.rz.scp.css */
+/* /Components/Pages/Transactions.razor.rz.scp.css */
+#list1 .form-control[b-elgxus3j4j] {
+    border-color: transparent;
+}
+
+    #list1 .form-control:focus[b-elgxus3j4j] {
+        border-color: transparent;
+        box-shadow: none;
+    }
+
+#list1 .select-input.form-control[readonly]:not([disabled])[b-elgxus3j4j] {
+    background-color: #fbfbfb;
+}
+
+.todo-toolbar .search[b-elgxus3j4j] {
+    background-color: #eff1f2;
+}

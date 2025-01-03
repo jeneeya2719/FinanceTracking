@@ -2,6 +2,7 @@ Components\Layout\MainLayout.razor.css
 Components\Layout\NavMenu.razor.css
 Components\Pages\Home.razor.css
 Components\Pages\Login.razor.css
+Components\Pages\Transactions.razor.css
 OpenSans-Regular.ttf
 appicon.ico
 appiconLargeTile.scale-100.png

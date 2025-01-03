@@ -1,0 +1,182 @@
+﻿@page "/transactions"
+@inject ITransactionService TransactionService
+@inject GlobalState _globalState
+@inject NavigationManager NavigationManager
+
+<PageTitle>Transactions</PageTitle>
+
+<h3>Transactions</h3>
+
+@if (_generalErrorMessage != null)
+{
+    <div class="alert alert-danger">@_generalErrorMessage</div>
+}
+
+@if (_transactions == null || !_transactions.Any())
+{
+    <div class="alert alert-warning">No transactions available.</div>
+}
+
+<div class="d-flex justify-content-between mb-3">
+    <button class="btn btn-primary" @onclick="OpenAddTransactionModal">Add Transaction</button>
+
+    <div class="d-flex">
+        <input type="text" class="form-control mr-2" @bind="_searchTerm" placeholder="Search Transactions" @onchange="SearchTaskName" />
+        <select class="form-control" @bind="_tabFilter" @onchange="TabFilter">
+            <option value="All">All</option>
+            <option value="Due">Due</option>
+            <option value="Done">Done</option>
+        </select>
+    </div>
+</div>
+
+@if (_transactions != null)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Transaction Name</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var transaction in _transactions)
+            {
+                <tr>
+                    <td>@transaction.Name</td>
+                    <td>@transaction.Date.ToShortDateString()</td>
+                    <td>@transaction.Status</td>
+                    <td>
+                        <button class="btn btn-secondary" @onclick="() => EditTransaction(transaction)">Edit</button>
+                        <button class="btn btn-danger" @onclick="() => DeleteTransaction(transaction)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<ModalDialog @bind-Show="@_showEditTodoDialog" Title="Edit Transaction" OnSave="SaveTransaction">
+    <EditForm Model="@_selectedTransaction">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group">
+            <label for="transactionName">Transaction Name</label>
+            <InputText id="transactionName" class="form-control" @bind-Value="_selectedTransaction.Name" />
+        </div>
+        <div class="form-group">
+            <label for="transactionDate">Date</label>
+            <InputDate id="transactionDate" class="form-control" @bind-Value="_selectedTransaction.Date" />
+        </div>
+        <div class="form-group">
+            <label for="transactionStatus">Status</label>
+            <select class="form-control" @bind-Value="_selectedTransaction.Status">
+                <option value="Pending">Pending</option>
+                <option value="Completed">Completed</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </EditForm>
+</ModalDialog>
+
+@code {
+    private List<Transaction> _transactions = new List<Transaction>();
+    private string _searchTerm = string.Empty;
+    private string _tabFilter = "All";
+    private string _generalErrorMessage;
+    private bool _showEditTodoDialog;
+    private Transaction _selectedTransaction;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            if (_globalState == null || _globalState.CurrentUser == null)
+            {
+                _generalErrorMessage = "User state is not available.";
+                return;
+            }
+
+            await LoadTransactions();
+        }
+        catch (Exception ex)
+        {
+            _generalErrorMessage = $"An error occurred while initializing the component: {ex.Message}";
+        }
+    }
+
+    private async Task LoadTransactions()
+    {
+        try
+        {
+            if (_globalState == null || _globalState.CurrentUser == null)
+            {
+                throw new InvalidOperationException("User state is not available.");
+            }
+
+            _transactions = await TransactionService.GetAllAsync(_globalState.CurrentUser.UserId, _tabFilter, _searchTerm);
+            Console.WriteLine($"Transactions loaded: {_transactions.Count} items.");
+        }
+        catch (Exception ex)
+        {
+            _generalErrorMessage = $"An error occurred while loading transactions: {ex.Message}";
+        }
+    }
+
+    private async Task SearchTaskName(ChangeEventArgs e)
+    {
+        try
+        {
+            _searchTerm = e.Value.ToString();
+            await LoadTransactions();
+        }
+        catch (Exception ex)
+        {
+            _generalErrorMessage = $"An error occurred while searching: {ex.Message}";
+        }
+    }
+
+    private void TabFilter(ChangeEventArgs e)
+    {
+        _tabFilter = e.Value.ToString();
+        LoadTransactions();
+    }
+
+    private void OpenAddTransactionModal()
+    {
+        _selectedTransaction = new Transaction();
+        _showEditTodoDialog = true;
+    }
+
+    private void EditTransaction(Transaction transaction)
+    {
+        _selectedTransaction = transaction;
+        _showEditTodoDialog = true;
+    }
+
+    private void DeleteTransaction(Transaction transaction)
+    {
+        // Implement delete logic here
+    }
+
+    private async Task SaveTransaction()
+    {
+        try
+        {
+            if (_selectedTransaction != null)
+            {
+                // Save transaction logic here
+                _showEditTodoDialog = false;
+                await LoadTransactions();
+            }
+        }
+        catch (Exception ex)
+        {
+            _generalErrorMessage = $"An error occurred while saving the transaction: {ex.Message}";
+        }
+    }
+}

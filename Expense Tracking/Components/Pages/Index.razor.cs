@@ -10,4 +10,4 @@ namespace Expense_Tracking.Components.Pages
         }
 
     }
-} 
+}

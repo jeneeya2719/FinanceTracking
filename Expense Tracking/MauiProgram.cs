@@ -1,4 +1,5 @@
-﻿using Expense_Tracking.Services;
+﻿using Expense_Tracking.Models;
+using Expense_Tracking.Services;
 using Expense_Tracking.Services.Interface;
 using Microsoft.Extensions.Logging;
 using MudBlazor.Services;
@@ -20,8 +21,10 @@ namespace Expense_Tracking
 
             builder.Services.AddMauiBlazorWebView();
             builder.Services.AddScoped<IUserService, UserService>();
-            builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<ITransactionService, TransactionService>();
+            builder.Services.AddSingleton<GlobalState>();
+
+
             builder.Services.AddMudServices();
 
 

@@ -30,25 +30,25 @@
     <AppXManifest Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-12-31T08:15:31.354</Modified>
+      <Modified>2025-01-03T17:13:33.458</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-12-31T04:28:24.363</Modified>
+      <Modified>2025-01-03T17:13:33.311</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Expense Tracking.runtimeconfig.json">
       <PackagePath>Expense Tracking.runtimeconfig.json</PackagePath>
-      <Modified>2024-12-30T09:11:13.830</Modified>
+      <Modified>2025-01-03T17:13:33.140</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Expense Tracking.dll">
       <PackagePath>Expense Tracking.dll</PackagePath>
-      <Modified>2024-12-31T08:15:30.811</Modified>
+      <Modified>2025-01-03T17:13:32.565</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Expense Tracking.exe</PackagePath>
-      <Modified>2024-12-31T08:15:30.825</Modified>
+      <Modified>2025-01-03T17:13:32.578</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -304,7 +304,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Expense Tracking.deps.json">
       <PackagePath>Expense Tracking.deps.json</PackagePath>
-      <Modified>2024-12-31T04:28:23.771</Modified>
+      <Modified>2025-01-03T17:13:33.033</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhtha\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.53\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
@@ -684,11 +684,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\Expense Tracking.styles.css">
       <PackagePath>wwwroot\Expense Tracking.styles.css</PackagePath>
-      <Modified>2024-12-30T09:09:53.828</Modified>
+      <Modified>2025-01-03T17:13:06.900</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\Expense Tracking.bundle.scp.css">
       <PackagePath>wwwroot\Expense Tracking.bundle.scp.css</PackagePath>
-      <Modified>2024-12-30T09:09:53.830</Modified>
+      <Modified>2025-01-03T17:13:06.902</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhtha\.nuget\packages\mudblazor\7.15.0\staticwebassets\MudBlazor.min.css">
       <PackagePath>wwwroot\_content\MudBlazor\MudBlazor.min.css</PackagePath>
@@ -713,6 +713,10 @@
     <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\Components\Pages\Login.razor.css">
       <PackagePath>Components\Pages\Login.razor.css</PackagePath>
       <Modified>2024-12-30T09:09:52.040</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\Components\Pages\Transactions.razor.css">
+      <PackagePath>Components\Pages\Transactions.razor.css</PackagePath>
+      <Modified>2025-01-03T17:13:06.578</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

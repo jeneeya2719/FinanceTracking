@@ -418,3 +418,4 @@ C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-w
 C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MudBlazor.dll
 C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Pages\Login.razor.rz.scp.css
 C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Pages\Home.razor.rz.scp.css
+C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Pages\Transactions.razor.rz.scp.css

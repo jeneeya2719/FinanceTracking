@@ -20,5 +20,18 @@ namespace Expense_Tracking.Abstraction
             var json = JsonSerializer.Serialize(users);
             File.WriteAllText(FilePath, json);
         }
+
+        public static string GetAppDirectoryPath()
+        {
+            return Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                "Transaction-Data"
+            );
+        }
+
+        public static string GetTodosFilePath(Guid userId)
+        {
+            return Path.Combine(GetAppDirectoryPath(), userId.ToString() + "_transactions.json");
+        }
     }
 }
