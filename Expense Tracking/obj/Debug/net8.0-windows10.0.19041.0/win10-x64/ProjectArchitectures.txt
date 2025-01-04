@@ -1,1 +1,1 @@
-D:\college\FinanceTracking\Expense Tracking\Expense Tracking.csproj;x64
+C:\Projects\Semester5\Application Development\FinanceTracking\FinanceTracking\Expense Tracking\Expense Tracking.csproj;x64

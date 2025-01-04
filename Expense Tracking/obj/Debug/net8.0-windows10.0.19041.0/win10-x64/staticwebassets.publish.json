@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gK2H6i77g1G8VJCkQbr3dC++e7ijK5dvTnYLNEb2Aug=",
+  "Hash": "mEQgma8Bf+bOoOx/TQ83OD7NgdO77TDPUb3l8F+LPKI=",
   "Source": "Expense Tracking",
   "BasePath": "/",
   "Mode": "Root",
@@ -10,55 +10,17 @@
     {
       "Name": "Expense Tracking\\wwwroot",
       "Source": "Expense Tracking",
-      "ContentRoot": "D:\\college\\FinanceTracking\\Expense Tracking\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\wwwroot\\",
       "BasePath": "/",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Dell\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.css",
-      "SourceId": "MudBlazor",
-      "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dell\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\",
-      "BasePath": "_content/MudBlazor",
-      "RelativePath": "MudBlazor.min.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dell\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.css"
-    },
-    {
-      "Identity": "C:\\Users\\Dell\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.js",
-      "SourceId": "MudBlazor",
-      "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Dell\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\",
-      "BasePath": "_content/MudBlazor",
-      "RelativePath": "MudBlazor.min.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dell\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.js"
-    },
-    {
-      "Identity": "D:\\college\\FinanceTracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\Expense Tracking.styles.css",
+      "Identity": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\Expense Tracking.styles.css",
       "SourceId": "Expense Tracking",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\college\\FinanceTracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\",
       "BasePath": "/",
       "RelativePath": "Expense Tracking.styles.css",
       "AssetKind": "All",
@@ -71,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\college\\FinanceTracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\Expense Tracking.styles.css"
+      "OriginalItemSpec": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\Expense Tracking.styles.css"
     },
     {
-      "Identity": "D:\\college\\FinanceTracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\Expense Tracking.bundle.scp.css",
+      "Identity": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\Expense Tracking.bundle.scp.css",
       "SourceId": "Expense Tracking",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\college\\FinanceTracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\",
       "BasePath": "/",
       "RelativePath": "Expense Tracking.bundle.scp.css",
       "AssetKind": "All",
@@ -90,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\college\\FinanceTracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\Expense Tracking.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\Expense Tracking.bundle.scp.css"
     },
     {
-      "Identity": "D:\\college\\FinanceTracking\\Expense Tracking\\wwwroot\\css\\app.css",
+      "Identity": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\wwwroot\\css\\app.css",
       "SourceId": "Expense Tracking",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\college\\FinanceTracking\\Expense Tracking\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/app.css",
       "AssetKind": "All",
@@ -112,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\css\\app.css"
     },
     {
-      "Identity": "D:\\college\\FinanceTracking\\Expense Tracking\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "Expense Tracking",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\college\\FinanceTracking\\Expense Tracking\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -131,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\college\\FinanceTracking\\Expense Tracking\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "Expense Tracking",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\college\\FinanceTracking\\Expense Tracking\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -150,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\college\\FinanceTracking\\Expense Tracking\\wwwroot\\favicon.png",
+      "Identity": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\wwwroot\\favicon.png",
       "SourceId": "Expense Tracking",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\college\\FinanceTracking\\Expense Tracking\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
@@ -169,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
-      "Identity": "D:\\college\\FinanceTracking\\Expense Tracking\\wwwroot\\index.html",
+      "Identity": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\wwwroot\\index.html",
       "SourceId": "Expense Tracking",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\college\\FinanceTracking\\Expense Tracking\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "index.html",
       "AssetKind": "All",
@@ -186,6 +148,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\bhtha\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.css",
+      "SourceId": "MudBlazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\bhtha\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\",
+      "BasePath": "_content/MudBlazor",
+      "RelativePath": "MudBlazor.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\bhtha\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\bhtha\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.js",
+      "SourceId": "MudBlazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\bhtha\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\",
+      "BasePath": "_content/MudBlazor",
+      "RelativePath": "MudBlazor.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\bhtha\\.nuget\\packages\\mudblazor\\7.15.0\\staticwebassets\\MudBlazor.min.js"
     }
   ]
 }

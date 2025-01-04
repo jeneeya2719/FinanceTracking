@@ -10,7 +10,7 @@
 
         <!-- Right Form Section -->
         <div class="form-login">
-            <form class="text-center">
+            <form class="text-center" @onsubmit="HandleLogin">
                 <h1 class="h3 mb-3 fw-normal">Please Login</h1>
 
                 <!-- Username Input -->
@@ -36,10 +36,10 @@
                     <label for="currencySelect">Currency</label>
                 </div>
 
-                @if (!string.IsNullOrEmpty(ErrorMessge))
-                {
-                    <div class="alert alert-danger">@ErrorMessge</div>
-                }
+                @* @if (!string.IsNullOrEmpty(ErrorMessge)) *@
+                @* { *@
+                @*     <div class="alert alert-danger">@ErrorMessge</div> *@
+                @* } *@
 
                 <!-- Login Button -->
                 <button class="btn btn-lg btn-login">
@@ -83,11 +83,11 @@
     }
 
         .login-image img {
-           width: 100%; /* Adjust image to fill the container */
-    max-width: 400px; /* Set a maximum width for the image */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensures the image scales properly */
-    padding: 20px; /* Optional padding for better spacing */
+            width: 100%; /* Adjust image to fill the container */
+            max-width: 400px; /* Set a maximum width for the image */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover; /* Ensures the image scales properly */
+            padding: 20px; /* Optional padding for better spacing */
         }
 
     /* Right Form Section */

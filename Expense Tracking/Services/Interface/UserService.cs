@@ -10,6 +10,14 @@ namespace Expense_Tracking.Services
         public const string SeedUsername = "admin";
         public const string SeedPassword = "admin";
 
+        private static readonly List<Currency> _currencies = new()
+        {
+            new Currency { CurrencyId = Guid.NewGuid(), CurrencyCode = CurrencyCode.NPR },
+            new Currency { CurrencyId = Guid.NewGuid(), CurrencyCode = CurrencyCode.USD },
+            new Currency { CurrencyId = Guid.NewGuid(), CurrencyCode = CurrencyCode.EUR },
+            new Currency { CurrencyId = Guid.NewGuid(), CurrencyCode = CurrencyCode.AUD }
+        };
+
         private static void SaveAll(List<User> users)
         {
             string appDataDirectoryPath = Utils.GetAppDirectoryPath();
@@ -37,7 +45,7 @@ namespace Expense_Tracking.Services
             return JsonSerializer.Deserialize<List<User>>(json);
         }
 
-        public static List<User> Create(Guid userId, string username, string password)
+        public static List<User> Create(Guid userId, string username, string password, CurrencyCode currencyCode)
         {
             List<User> users = GetAll();
             bool usernameExists = users.Any(x => x.UserName == username);
@@ -53,7 +61,7 @@ namespace Expense_Tracking.Services
                     UserName = username,
                     Password = Utils.HashSecret(password),
                     CreateDate = userId,
-                 
+                    Currency = currencyCode
                 }
             );
             SaveAll(users);
@@ -66,7 +74,7 @@ namespace Expense_Tracking.Services
 
             if (users == null)
             {
-                Create(Guid.Empty, SeedUsername, SeedPassword);
+                Create(Guid.Empty, SeedUsername, SeedPassword, CurrencyCode.NPR);
             }
         }
 
@@ -141,6 +149,12 @@ namespace Expense_Tracking.Services
             SaveAll(users);
 
             return user;
+        }
+
+        // Fetch available currencies
+        public static List<Currency> GetCurrencies()
+        {
+            return _currencies;
         }
     }
 }
