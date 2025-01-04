@@ -30,7 +30,7 @@
     <AppXManifest Include="C:\Projects\Semester5\Application Development\FinanceTracking\FinanceTracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-01-04T15:02:56.284</Modified>
+      <Modified>2025-01-04T15:59:17.234</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\Semester5\Application Development\FinanceTracking\FinanceTracking\Expense Tracking\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Expense Tracking.dll">
       <PackagePath>Expense Tracking.dll</PackagePath>
-      <Modified>2025-01-04T14:59:26.003</Modified>
+      <Modified>2025-01-04T15:59:16.641</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\Semester5\Application Development\FinanceTracking\FinanceTracking\Expense Tracking\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Expense Tracking.exe</PackagePath>
-      <Modified>2025-01-04T14:59:26.015</Modified>
+      <Modified>2025-01-04T15:59:16.675</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Projects\Semester5\Application Development\FinanceTracking\FinanceTracking\Expense Tracking\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
