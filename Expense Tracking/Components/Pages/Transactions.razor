@@ -1,57 +1,138 @@
 ﻿@page "/transaction"
-
+@using Expense_Tracking.Services
 
 <nav class="navbar navbar-light bg-light justify-content-between">
     <h1 class="navbar-brand mb-0 h1">Transactions</h1>
     <button class="btn btn-primary" type="button" @onclick="OpenAddTodoDialog">
-        <span class="oi oi-plus" /> Add
+        <span class="oi oi-plus" /> Add Transaction
     </button>
 </nav>
 <ul class="nav nav-tabs">
-    <li class="nav-item">
-        <a class='nav-link btn @(_tabFilter == "All" ? "active" : "")' @onclick='() => TabFilter("All")'>All</a>
+    <li class="nav-item ">
+        <a class='nav-link btn @(_tabFilter == "All" ? "active" : "")' @onclick='()=>TabFilter("All")'>All</a>
     </li>
     <li class="nav-item">
-        <a class='nav-link btn @(_tabFilter == "Due" ? "active" : "")' @onclick='() => TabFilter("Due")'>Due</a>
+        <a class='nav-link btn @(_tabFilter == "Due" ? "active" : "")' @onclick='()=>TabFilter("Due")'>Due</a>
     </li>
     <li class="nav-item">
-        <a class='nav-link btn @(_tabFilter == "Done" ? "active" : "")' @onclick='() => TabFilter("Done")'>Done</a>
+        <a class='nav-link btn @(_tabFilter == "Done" ? "active" : "")' @onclick='()=>TabFilter("Done")'>Done</a>
     </li>
 </ul>
 
 <table class="table">
     <thead>
         <tr>
-            <th>Status</th>
-            <th>Transaction Name</th>
-            <th>Due Date</th>
-            <th>Created At</th>
+            <th>
+                <div class="d-flex">
+                    Status
+                    <a class='btn text-@(_sortBy == "status" ? "primary" : "secondary")' data-mdb-toggle="tooltip"
+                        @onclick='()=>SortByHandler("status")'>
+                        <span class='oi oi-sort-@(_sortBy == "status" ? _sortDirection : "ascending")' />
+                    </a>
+                </div>
+            </th>
+            <th>
+                <div class="d-flex">
+                    <input type="search" class="form-control search" placeholder="Search" @oninput="SearchTaskName" />
+                    <a class='btn text-@(_sortBy == "taskName" ? "primary" : "secondary")' data-mdb-toggle="tooltip"
+                        @onclick='()=>SortByHandler("taskName")'>
+                        <span class='oi oi-sort-@(_sortBy == "taskName" ? _sortDirection : "ascending")' />
+                    </a>
+                </div>
+            </th>
+            <th>
+                <div class="d-flex">
+                    Due Date
+                    <a class='btn text-@(_sortBy == "dueDate" ? "primary" : "secondary")' data-mdb-toggle="tooltip"
+                        @onclick='()=>SortByHandler("dueDate")'>
+                        <span class='oi oi-sort-@(_sortBy == "dueDate" ? _sortDirection : "ascending")' />
+                    </a>
+                </div>
+            </th>
+            <th>
+                <div class="d-flex">
+                    Created At
+                    <a class='btn text-@(_sortBy == "createdAt" ? "primary" : "secondary")' data-mdb-toggle="tooltip"
+                        @onclick='()=>SortByHandler("createdAt")'>
+                        <span class='oi oi-sort-@(_sortBy == "createdAt" ? _sortDirection : "ascending")' />
+                    </a>
+                </div>
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var transactionItem in _transactions)
-        {
-            <tr>
-                <td>
-                    <div class="form-check"> 
-                        <input class="form-check-input me-0" type="checkbox" checked="@transactionItem.IsDone"
-                               @onchange='() => ToggleDone(transactionItem)' />
-                    </div>  
+        @{
+            IEnumerable<Transaction> financeList = _finances;
+            if (_sortBy == "status")
+            {
+                financeList = _sortDirection == "ascending" ? financeList.OrderBy(t => t.IsDone) : financeList.OrderByDescending(t =>
+                t.IsDone);
+            }
+            else if (_sortBy == "taskName")
+            {
+                financeList = _sortDirection == "ascending" ? financeList.OrderBy(t => t.TaskName) : financeList.OrderByDescending(t =>
+                t.TaskName);
+            }
+            else if (_sortBy == "dueDate")
+            {
+                financeList = _sortDirection == "ascending" ? financeList.OrderBy(t => t.DueDate) : financeList.OrderByDescending(t =>
+                t.DueDate);
+            }
+            else if (_sortBy == "createdAt")
+            {
+                financeList = _sortDirection == "ascending" ? financeList.OrderBy(t => t.CreatedAt) : financeList.OrderByDescending(t =>
+                t.CreatedAt);
+            }
+
+            if (_tabFilter == "Due")
+            {
+                financeList = financeList.Where(t => !t.IsDone);
+            }
+            else if (_tabFilter == "Done")
+            {
+                financeList = financeList.Where(t => t.IsDone);
+            }
+
+            foreach (var finanaceItem in financeList)
+            {
+                <tr>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input me-0" type="checkbox" checked="@finanaceItem.IsDone"
+                                   @onchange='()=>ToggleDone(finanaceItem)' />
+                        </div>
+                    </td>
+                    <td class='@(finanaceItem.IsDone ? "text-decoration-line-through" : "")'>@finanaceItem.TaskName</td>
+                    <td>
+                        @{
+                            bool isToday = !finanaceItem.IsDone && finanaceItem.DueDate == DateTime.Today;
+                            bool isOlder = !finanaceItem.IsDone && finanaceItem.DueDate < DateTime.Today;
+                            <p class='small mb-0 @(isToday ? "text-warning" : isOlder ? "text-danger" : "")'>
+                                @if (isToday || isOlder)
+                                {
+                                    <span class="oi oi-warning mr-3" />
+                                }
+                                @finanaceItem.DueDate.ToString("MMM dd, yyyy")
+                            </p>
+                        }
                 </td>
-                <td class='@(transactionItem.IsDone ? "text-decoration-line-through" : "")'>@transactionItem.TaskName</td>
-                <td>@transactionItem.DueDate.ToString("MMM dd, yyyy")</td>
-                <td>@transactionItem.CreatedAt.ToString("MMM dd, yyyy h:mm tt")</td>
                 <td>
-                    <button disabled="@transactionItem.IsDone" class="btn btn-outline-secondary" type="button"
-                            @onclick="() => OpenEditTodoDialog(transactionItem)">
+                    <p class="small mb-0">
+                            @finanaceItem.CreatedAt.ToString("MMM dd, yyyy h:mm tt")
+                    </p>
+                </td>
+                <td>
+                        <button disabled="@finanaceItem.IsDone" class="btn btn-outline-secondary" type="button"
+                                @onclick="()=>OpenEditTodoDialog(finanaceItem)">
                         <span class="oi oi-pencil" /> Edit
                     </button>
-                    <button class="btn btn-outline-danger" type="button" @onclick="() => OpenDeleteTodoDialog(transactionItem)">
+                        <button class="btn btn-outline-danger" type="button" @onclick="()=>OpenDeleteTodoDialog(finanaceItem)">
                         <span class="oi oi-delete" /> Delete
                     </button>
                 </td>
             </tr>
+            }
         }
     </tbody>
 </table>
@@ -59,45 +140,33 @@
 @if (_showEditTodoDialog)
 {
     <ModalDialog Title="@_dialogTitle" OnClose="@OnEditTodoDialogClose" OkLabel="@_dialogOkLabel">
-        <div class="form-floating">
-            <input id="taskName" type="text" class="form-control" @bind="_todoModel.TaskName" placeholder="Task Name" />
-            <label for="taskName">Task Name</label>
-        </div>
-        <div class="form-floating">
-            <label for="dueDate">Due Date</label>
-            <input id="dueDate" type="date" min='@DateTime.Today.ToString("yyyy-MM-dd")'
-                   value='@_todoModel.DueDate.ToString("yyyy-MM-dd")' @onchange="updateDate" class="form-control text-left"
-                   placeholder="Due Date">
-        </div>
+    <div class="form-floating">
+        <input id="taskName" type="text" class="form-control" @bind="_todoModel.TaskName" placeholder="Task Name" />
+        <label for="taskName">Task Name</label>
+    </div>
+    <div class="form-floating">
+        <label for="dueDate">Due Date</label>
+        <input id="dueDate" type="date" min='@DateTime.Today.ToString("yyyy-MM-dd")'
+            value='@_todoModel.DueDate.ToString("yyyy-MM-dd")' @onchange="updateDate" class="form-control text-left"
+            placeholder="Due Date">
+    </div>
 
-        @if (!string.IsNullOrEmpty(_editTodoErrorMessage))
+    @if (!string.IsNullOrEmpty(_editTodoErrorMessage))
         {
             <AlertMessage Type="danger" Message="@_editTodoErrorMessage" />
         }
-
-        <div class="d-flex justify-content-between mt-3">
-            <button class="btn btn-secondary" @onclick="OnCancelEditTodo">Cancel</button>
-            <button class="btn btn-primary" @onclick="OnSaveEditTodo">Add</button>
-        </div>
-    </ModalDialog>
+        </ModalDialog>
 }
 
 @if (_showDeleteTodoDialog)
 {
     <ModalDialog Title="Delete Todo" OnClose="@OnDeleteTodoDialogClose" OkLabel="Confirm">
-        <p>Are you sure you want to delete <strong>@_deleteTodo.TaskName</strong> task?</p>
-        @if (!string.IsNullOrEmpty(_deleteTodoErrorMessage))
+    <p>Are you sure you want to delete <strong>@_deleteTodo.TaskName</strong> task?</p>
+    @if (!string.IsNullOrEmpty(_deleteTodoErrorMessage))
         {
             <AlertMessage Type="danger" Message="@_deleteTodoErrorMessage" />
         }
-    </ModalDialog>
-}
-
-@if (!string.IsNullOrEmpty(_generalErrorMessage))
-{
-    <div class="alert alert-danger" role="alert">
-        Error: @_generalErrorMessage
-    </div>
+        </ModalDialog>
 }
 
 @code {
@@ -105,91 +174,32 @@
     private GlobalState _globalState { get; set; }
     private bool _showEditTodoDialog { get; set; }
     private bool _showDeleteTodoDialog { get; set; }
-    private List<Transaction> _transactions { get; set; } = new List<Transaction>();
+    private List<Transaction> _finances { get; set; }
     private Transaction _deleteTodo { get; set; }
     private string _dialogTitle { get; set; }
     private string _dialogOkLabel { get; set; }
     private string _editTodoErrorMessage { get; set; }
     private string _deleteTodoErrorMessage { get; set; }
-    private string _generalErrorMessage { get; set; }
     private Transaction _todoModel { get; set; }
     private string _tabFilter = "All";
     private string _sortBy = "dueDate";
     private string _sortDirection = "ascending";
-    private string _searchTerm { get; set; } = string.Empty;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        try
-        {
-            
-            if (_globalState == null)
-            {
-                throw new InvalidOperationException("GlobalState is not available.");
-            }
-
-            
-            if (_globalState.CurrentUser == null)
-            {
-                throw new InvalidOperationException("CurrentUser is not available.");
-            }
-           // Attempt to load transactions
-            await LoadTransactions();
-        }
-        catch (Exception ex)
-        {
-            _generalErrorMessage = $"An error occurred while initializing: {ex.Message}";
-        }
+        _finances = FinanceService.GetAll(_globalState.CurrentUser.UserId);
     }
 
-    private async Task LoadTransactions()
+    private void SortByHandler(string sortByName)
     {
-        try
+        if (_sortBy == sortByName)
         {
-            if (_globalState == null || _globalState.CurrentUser == null)
-            {
-                throw new InvalidOperationException("User state is not available.");
-            }
-
-           // _transactions = await TransactionService.GetAllAsync(_globalState.CurrentUser.UserId, _tabFilter, _sortBy, _sortDirection, _searchTerm);
+            _sortDirection = _sortDirection == "ascending" ? "descending" : "ascending";
         }
-        catch (Exception ex)
+        else
         {
-            _generalErrorMessage = $"An error occurred while loading transactions: {ex.Message}";
-        }
-    }
-
-    private async Task SortByHandler(string sortByName)
-    {
-        try
-        {
-            if (_sortBy == sortByName)
-            {
-                _sortDirection = _sortDirection == "ascending" ? "descending" : "ascending";
-            }
-            else
-            {
-                _sortBy = sortByName;
-                _sortDirection = "ascending";
-            }
-            await LoadTransactions();
-        }
-        catch (Exception ex)
-        {
-            _generalErrorMessage = $"An error occurred while sorting: {ex.Message}";
-        }
-    }
-
-    private async Task SearchTaskName(ChangeEventArgs e)
-    {
-        try
-        {
-            _searchTerm = e.Value.ToString();
-            await LoadTransactions();
-        }
-        catch (Exception ex)
-        {
-            _generalErrorMessage = $"An error occurred while searching: {ex.Message}";
+            _sortBy = sortByName;
+            _sortDirection = "ascending";
         }
     }
 
@@ -197,15 +207,32 @@
     {
         _dialogTitle = "Add Todo";
         _dialogOkLabel = "Add";
-        _todoModel = new Transaction { Id = Guid.Empty };
+        _todoModel = new Transaction();
+        _todoModel.Id = Guid.Empty;
         _showEditTodoDialog = true;
     }
 
-    private void OpenEditTodoDialog(Transaction editTodo)
+    private void SearchTaskName(ChangeEventArgs e)
     {
-        _dialogTitle = "Edit Todo";
+        var searchTerm = e.Value.ToString();
+        if (!string.IsNullOrEmpty(searchTerm) && searchTerm.Length > 2)
+        {
+            _finances = FinanceService.GetAll(_globalState.CurrentUser.UserId).Where(t =>
+            t.TaskName.ToLower().Contains(searchTerm.ToLower())).ToList();
+        }
+        else
+        {
+            _finances = FinanceService.GetAll(_globalState.CurrentUser.UserId);
+        }
+    }
+
+    private void OpenEditTodoDialog(Transaction editTransaction)
+    {
+        _dialogTitle = "Edit Transaction";
         _dialogOkLabel = "Save";
-        _todoModel = editTodo;
+
+        _todoModel = editTransaction;
+
         _showEditTodoDialog = true;
     }
 
@@ -219,23 +246,7 @@
     {
         _todoModel.DueDate = DateTime.Parse(e.Value.ToString());
     }
-
-
-
-    private async Task ToggleDone(Transaction tran)
-    {
-        try
-        {
-            tran.IsDone = !tran.IsDone;
-           // _transactions = await TransactionService.UpdateAsync(_globalState.CurrentUser.UserId, tran.Id, tran.TaskName, tran.DueDate, tran.IsDone);
-        }
-        catch (Exception ex)
-        {
-            _generalErrorMessage = $"An error occurred while toggling task status: {ex.Message}";
-        }
-    }
-
-    private async Task OnEditTodoDialogClose(bool isCancel)
+    private void OnEditTodoDialogClose(bool isCancel)
     {
         if (isCancel)
         {
@@ -245,28 +256,29 @@
         {
             try
             {
-                _editTodoErrorMessage = string.Empty;
+                _editTodoErrorMessage = "";
                 if (_todoModel.Id == Guid.Empty)
                 {
-                   // _transactions = await TransactionService.CreateAsync(_globalState.CurrentUser.UserId, _todoModel.TaskName, _todoModel.DueDate);
+                    _finances = FinanceService.Create(_globalState.CurrentUser.UserId, _todoModel.TaskName, _todoModel.DueDate);
                 }
                 else
                 {
-                   /// _transactions = await TransactionService.UpdateAsync(_globalState.CurrentUser.UserId, _todoModel.Id, _todoModel.TaskName, _todoModel.DueDate, _todoModel.IsDone);
+                    _finances = FinanceService.Update(_globalState.CurrentUser.UserId, _todoModel.Id, _todoModel.TaskName, _todoModel.DueDate,
+                    _todoModel.IsDone);
                 }
                 _showEditTodoDialog = false;
             }
             catch (Exception e)
             {
-                _editTodoErrorMessage = e.Message; 
+                _editTodoErrorMessage = e.Message;
             }
         }
     }
-
-    private async Task OnDeleteTodoDialogClose(bool isCancel)
+    private void OnDeleteTodoDialogClose(bool isCancel)
     {
         if (isCancel)
         {
+
             _showDeleteTodoDialog = false;
             _deleteTodo = null;
         }
@@ -274,8 +286,8 @@
         {
             try
             {
-                _deleteTodoErrorMessage = string.Empty;
-               // _transactions = await TransactionService.DeleteAsync(_globalState.CurrentUser.UserId, _deleteTodo.Id);
+                _deleteTodoErrorMessage = "";
+                _finances = FinanceService.Delete(_globalState.CurrentUser.UserId, _deleteTodo.Id);
                 _showDeleteTodoDialog = false;
                 _deleteTodo = null;
             }
@@ -285,20 +297,13 @@
             }
         }
     }
-
-    private void TabFilter(string tab)
+    private void TabFilter(string status)
     {
-        _tabFilter = tab;
-        LoadTransactions();
+        _tabFilter = status;
     }
-
-    private void OnCancelEditTodo()
+    private void ToggleDone(Transaction finance)
     {
-        _showEditTodoDialog = false;
-    }
-
-    private async Task OnSaveEditTodo()
-    {
-        await OnEditTodoDialogClose(false);
+        finance.IsDone = !finance.IsDone;
+        _finances = FinanceService.Update(_globalState.CurrentUser.UserId, finance.Id, finance.TaskName, finance.DueDate, finance.IsDone);
     }
 }

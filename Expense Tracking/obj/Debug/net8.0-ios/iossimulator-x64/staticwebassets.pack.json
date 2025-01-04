@@ -1,27 +1,27 @@
 {
   "Files": [
     {
-      "Id": "D:\\college\\FinanceTracking\\Expense Tracking\\obj\\Debug\\net8.0-ios\\iossimulator-x64\\scopedcss\\bundle\\Expense Tracking.styles.css",
+      "Id": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\obj\\Debug\\net8.0-ios\\iossimulator-x64\\scopedcss\\bundle\\Expense Tracking.styles.css",
       "PackagePath": "staticwebassets\\Expense Tracking.styles.css"
     },
     {
-      "Id": "D:\\college\\FinanceTracking\\Expense Tracking\\wwwroot\\css\\app.css",
+      "Id": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "D:\\college\\FinanceTracking\\Expense Tracking\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\college\\FinanceTracking\\Expense Tracking\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\college\\FinanceTracking\\Expense Tracking\\wwwroot\\favicon.png",
+      "Id": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "D:\\college\\FinanceTracking\\Expense Tracking\\wwwroot\\index.html",
+      "Id": "C:\\Projects\\Semester5\\Application Development\\FinanceTracking\\FinanceTracking\\Expense Tracking\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {

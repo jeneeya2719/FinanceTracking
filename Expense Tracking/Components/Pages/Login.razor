@@ -1,4 +1,5 @@
 ﻿@page "/login"
+@using Expense_Tracking.Services
 
 <main>
     <div class="form-login-container">
@@ -49,6 +50,27 @@
         </div>
     </div>
 </main>
+@* @code { *@
+@*     [CascadingParameter] *@
+@*     private GlobalState _globalState { get; set; } *@
+@*     private bool _showDefaultCredentials { get; set; } *@
+@*     private string _username { get; set; } *@
+@*     private string _password { get; set; } *@
+@*     private string _errorMessage = ""; *@
+
+@*     protected override void OnInitialized() *@
+@*     { *@
+@*         try *@
+@*         { *@
+@*             var user = UserService.Login(UserService.SeedUsername, UserService.SeedPassword); *@
+@*             _showDefaultCredentials = user.HasInitialPassword; *@
+@*         } *@
+@*         catch { } *@
+
+@*         _globalState.CurrentUser = null; *@
+@*         _errorMessage = ""; *@
+@*     } *@
+@* } *@
 
 <style>
     /* Centering the form vertically and horizontally */
@@ -69,7 +91,7 @@
         border-radius: 8px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         overflow: hidden;
-        max-width: 1000px; /* Increased max width for the container */
+        max-width: 1000px; 
         width: 100%;
     }
 
@@ -83,17 +105,17 @@
     }
 
         .login-image img {
-            width: 100%; /* Adjust image to fill the container */
-            max-width: 400px; /* Set a maximum width for the image */
-            height: auto; /* Maintain aspect ratio */
-            object-fit: cover; /* Ensures the image scales properly */
-            padding: 20px; /* Optional padding for better spacing */
+            width: 100%; 
+            max-width: 400px; 
+            height: auto; 
+            object-fit: cover; 
+            padding: 20px; 
         }
 
     /* Right Form Section */
     .form-login {
-        flex: 1.5; /* Increased the proportion of form width */
-        padding: 60px; /* Added more padding for a spacious look */
+        flex: 1.5; 
+        padding: 60px; 
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -104,14 +126,14 @@
         font-size: 2rem;
         text-align: center;
         margin-bottom: 20px;
-        color: black; /* Changed color to black */
+        color: black; 
     }
 
     /* Input Fields Styling */
     .form-floating input,
     .form-floating select {
         width: 100%;
-        padding: 12px; /* Adjusted padding for inputs */
+        padding: 12px; 
         margin: 10px 0;
         border-radius: 4px;
         border: 1px solid #ccc;

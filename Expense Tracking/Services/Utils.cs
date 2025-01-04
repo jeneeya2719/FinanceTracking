@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 
-namespace Expense_Tracking.Services.Interface
+namespace Expense_Tracking.Services
 {
     public static class Utils
     {
@@ -57,7 +57,7 @@ namespace Expense_Tracking.Services.Interface
 
         public static string GetTodosFilePath(Guid userId)
         {
-            return Path.Combine(GetAppDirectoryPath(), userId.ToString() + "_todos.json");
+            return Path.Combine(GetAppDirectoryPath(), userId.ToString() + "_transactions.json");
         }
     }
 }
