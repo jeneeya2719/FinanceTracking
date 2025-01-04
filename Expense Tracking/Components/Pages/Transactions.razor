@@ -151,7 +151,7 @@
                 throw new InvalidOperationException("User state is not available.");
             }
 
-            _transactions = await TransactionService.GetAllAsync(_globalState.CurrentUser.UserId, _tabFilter, _sortBy, _sortDirection, _searchTerm);
+           // _transactions = await TransactionService.GetAllAsync(_globalState.CurrentUser.UserId, _tabFilter, _sortBy, _sortDirection, _searchTerm);
         }
         catch (Exception ex)
         {
@@ -227,7 +227,7 @@
         try
         {
             tran.IsDone = !tran.IsDone;
-            _transactions = await TransactionService.UpdateAsync(_globalState.CurrentUser.UserId, tran.Id, tran.TaskName, tran.DueDate, tran.IsDone);
+           // _transactions = await TransactionService.UpdateAsync(_globalState.CurrentUser.UserId, tran.Id, tran.TaskName, tran.DueDate, tran.IsDone);
         }
         catch (Exception ex)
         {
@@ -248,11 +248,11 @@
                 _editTodoErrorMessage = string.Empty;
                 if (_todoModel.Id == Guid.Empty)
                 {
-                    _transactions = await TransactionService.CreateAsync(_globalState.CurrentUser.UserId, _todoModel.TaskName, _todoModel.DueDate);
+                   // _transactions = await TransactionService.CreateAsync(_globalState.CurrentUser.UserId, _todoModel.TaskName, _todoModel.DueDate);
                 }
                 else
                 {
-                    _transactions = await TransactionService.UpdateAsync(_globalState.CurrentUser.UserId, _todoModel.Id, _todoModel.TaskName, _todoModel.DueDate, _todoModel.IsDone);
+                   /// _transactions = await TransactionService.UpdateAsync(_globalState.CurrentUser.UserId, _todoModel.Id, _todoModel.TaskName, _todoModel.DueDate, _todoModel.IsDone);
                 }
                 _showEditTodoDialog = false;
             }
@@ -275,7 +275,7 @@
             try
             {
                 _deleteTodoErrorMessage = string.Empty;
-                _transactions = await TransactionService.DeleteAsync(_globalState.CurrentUser.UserId, _deleteTodo.Id);
+               // _transactions = await TransactionService.DeleteAsync(_globalState.CurrentUser.UserId, _deleteTodo.Id);
                 _showDeleteTodoDialog = false;
                 _deleteTodo = null;
             }

@@ -21,6 +21,12 @@ namespace Expense_Tracking.Abstraction
             File.WriteAllText(FilePath, json);
         }
 
+        protected void SaveTransaction(List<Transaction> Transaction)
+        {
+            var json = JsonSerializer.Serialize(Transaction);
+            File.WriteAllText(FilePath, json);
+        }
+
         public static string GetAppDirectoryPath()
         {
             return Path.Combine(

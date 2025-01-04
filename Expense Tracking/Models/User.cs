@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Expense_Tracking.Enums;
 
 namespace Expense_Tracking.Models
 {
@@ -10,12 +10,11 @@ namespace Expense_Tracking.Models
 
         public string Password { get; set; }
 
-        public bool HasInitialPassword { get; set; } = true;
+        public bool HasInitialPassword { get; set; }
 
-        // Foreign Key for Currency
-        [ForeignKey("Currency")]
-        public Guid CurrencyId { get; set; }
-        public Currency Currency { get; set; }
+        public CurrencyCode Currency { get; set; }
+
+        public Guid CreateDate { get; set; }    
 
         //Relationship between tables
         //public ICollection<Transaction> Transactions { get; set; }

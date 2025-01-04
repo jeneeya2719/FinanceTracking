@@ -1,16 +1,10 @@
 ﻿using Expense_Tracking.Abstraction;
 using Expense_Tracking.Models;
-using Expense_Tracking.Services.Interface;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace Expense_Tracking.Services
 {
-    public class TransactionService : UserBase, ITransactionService
+    public class TransactionService : UserBase
     {
         private static async Task SaveAllAsync(Guid userId, List<Transaction> transactions)
         {
@@ -53,24 +47,19 @@ namespace Expense_Tracking.Services
             return transactions;
         }
 
-        public async Task<List<Transaction>> CreateAsync(Guid userId, string taskName, DateTime dueDate)
+       /* public async Task<List<Transaction>> CreateAsync(Transaction trans)
         {
-            if (dueDate < DateTime.Today)
-            {
-                throw new Exception("Due date must be in the future.");
-            }
 
-            List<Transaction> transactions = await GetAllAsync(userId, string.Empty, string.Empty, string.Empty, string.Empty);
-            transactions.Add(new Transaction
-            {
-                TaskName = taskName,
-                DueDate = dueDate,
-                CreatedBy = userId
-            });
-            await SaveAllAsync(userId, transactions);
-            return transactions;
-        }
+             List<Transaction> transactions = await GetAllAsync(trans.Id, string.Empty, string.Empty, string.Empty, string.Empty);
 
+             transactions.Add(new Transaction
+             {
+                 Id = new Guid(),
+                 TaskName = trans.TaskName
+             });
+             await SaveUsers(transactions);
+             return transactions;
+         }*/
         public async Task<List<Transaction>> UpdateAsync(Guid userId, Guid id, string taskName, DateTime dueDate, bool isDone)
         {
             List<Transaction> transactions = await GetAllAsync(userId, string.Empty, string.Empty, string.Empty, string.Empty);

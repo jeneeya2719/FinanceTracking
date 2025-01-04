@@ -347,3 +347,68 @@ C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-i
 C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\scopedcss\Components\Pages\Home.razor.rz.scp.css
 C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\scopedcss\Components\Pages\Login.razor.rz.scp.css
 C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\scopedcss\Components\Pages\Transactions.razor.rz.scp.css
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\build-signature\signature
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\staticwebassets.build.json
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\staticwebassets.development.json
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\staticwebassets\msbuild.Expense Tracking.Microsoft.AspNetCore.StaticWebAssets.props
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\staticwebassets\msbuild.build.Expense Tracking.props
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\staticwebassets\msbuild.buildMultiTargeting.Expense Tracking.props
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\staticwebassets\msbuild.buildTransitive.Expense Tracking.props
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\staticwebassets.pack.json
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\scopedcss\Components\Pages\Home.razor.rz.scp.css
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\scopedcss\Components\Pages\Login.razor.rz.scp.css
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\scopedcss\Components\Pages\Transactions.razor.rz.scp.css
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\scopedcss\bundle\Expense Tracking.styles.css
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\scopedcss\projectbundle\Expense Tracking.bundle.scp.css
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\staticwebassets.publish.json
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\mauiimage.inputs
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\mauifont.inputs
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\mauisplash.inputs
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\mauisplash.stamp
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon76x76@2x.png
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon60x60@3x.png
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon60x60@2x.png
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon40x40@3x.png
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon40x40@2x.png
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon29x29@3x.png
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon29x29@2x.png
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@3x.png
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@2x.png
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\Contents.json
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot@3x.png
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot@2x.png
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot.png
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\mauiimage.stamp
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\mauiimage.outputs
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\mauifont.stamp
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\actool\_PartialAppManifest.items
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\actool\_BundleResourceWithLogicalName.items
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\actool\_ProcessedImageAssetsPath.items
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\ibtool\_BundleResourceWithLogicalName.items
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\ibtool\_ProcessedInterfaceDefinitionsPath.items
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\coremlc\_PartialAppManifest.items
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\coremlc\_BundleResourceWithLogicalName.items
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\coremlc\_ProcessedCoreMLModelsPath.items
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\_ProcessedBundleResourcesPath.items
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\_ProcessedContentPath.items
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\Expense Tracking.csproj.AssemblyReference.cache
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\Expense Tracking.GeneratedMSBuildEditorConfig.editorconfig
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\Expense Tracking.AssemblyInfoInputs.cache
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\Expense Tracking.AssemblyInfo.cs
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\Expense Tracking.csproj.CoreCompileInputs.cache
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\Expense Tracking.MvcApplicationPartsAssemblyInfo.cache
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\Expense Tracking.sourcelink.json
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\Expense Tracking.dll
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\refint\Expense Tracking.dll
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\Expense Tracking.pdb
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\MauiInfo.plist
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\MauiSplash.storyboard
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449.png
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@2x.png
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@3x.png
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\f\MauiInfo.plist
+D:\college\FinanceTracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\f\OpenSans-Regular.ttf

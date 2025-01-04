@@ -12,107 +12,100 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Expense_Tracking
 build_property.RootNamespace = Expense_Tracking
-build_property.ProjectDir = C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\
+build_property.ProjectDir = D:\college\FinanceTracking\Expense Tracking\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
-build_property.CsWinRTAotOptimizerEnabled = true
-build_property.CsWinRTAotExportsEnabled = 
-build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptIn = 
-build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptOut = 
-build_property.CsWinRTCcwLookupTableGeneratorEnabled = true
-build_property.CsWinRTMergeReferencedActivationFactories = 
-build_property.CsWinRTAotWarningLevel = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking
+build_property.MSBuildProjectDirectory = D:\college\FinanceTracking\Expense Tracking
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Projects/ExpenseTracking/Expense Tracking/Expense Tracking/App.xaml]
+[D:/college/FinanceTracking/Expense Tracking/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Expense_Tracking.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/ExpenseTracking/Expense Tracking/Expense Tracking/MainPage.xaml]
+[D:/college/FinanceTracking/Expense Tracking/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Expense_Tracking.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/ExpenseTracking/Expense Tracking/Expense Tracking/Components/Pages/Index.razor]
+[D:/college/FinanceTracking/Expense Tracking/Components/Pages/Index.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xJbmRleC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/ExpenseTracking/Expense Tracking/Expense Tracking/Components/Routes.razor]
+[D:/college/FinanceTracking/Expense Tracking/Components/Routes.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/ExpenseTracking/Expense Tracking/Expense Tracking/Components/_Imports.razor]
+[D:/college/FinanceTracking/Expense Tracking/Components/_Imports.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/ExpenseTracking/Expense Tracking/Expense Tracking/Shared/AlertMessage.razor]
+[D:/college/FinanceTracking/Expense Tracking/Shared/AlertMessage.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEFsZXJ0TWVzc2FnZS5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/ExpenseTracking/Expense Tracking/Expense Tracking/Shared/MainLayout.razor]
+[D:/college/FinanceTracking/Expense Tracking/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/ExpenseTracking/Expense Tracking/Expense Tracking/Shared/ModalDialog.razor]
+[D:/college/FinanceTracking/Expense Tracking/Shared/ModalDialog.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1vZGFsRGlhbG9nLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/ExpenseTracking/Expense Tracking/Expense Tracking/Components/Layout/MainLayout.razor]
+[D:/college/FinanceTracking/Expense Tracking/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-3u6h12oqre
 
-[C:/Projects/ExpenseTracking/Expense Tracking/Expense Tracking/Components/Layout/NavMenu.razor]
+[D:/college/FinanceTracking/Expense Tracking/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-opgspotzeb
 
-[C:/Projects/ExpenseTracking/Expense Tracking/Expense Tracking/Components/Pages/Home.razor]
+[D:/college/FinanceTracking/Expense Tracking/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-cakbzgbecl
 
-[C:/Projects/ExpenseTracking/Expense Tracking/Expense Tracking/Components/Pages/Login.razor]
+[D:/college/FinanceTracking/Expense Tracking/Components/Pages/Login.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = b-fd1dja5qhb
 
-[C:/Projects/ExpenseTracking/Expense Tracking/Expense Tracking/Components/Pages/Transactions.razor]
+[D:/college/FinanceTracking/Expense Tracking/Components/Pages/Transactions.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUcmFuc2FjdGlvbnMucmF6b3I=

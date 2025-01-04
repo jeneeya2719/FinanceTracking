@@ -12,7 +12,7 @@ namespace Expense_Tracking.Components.Pages
         // Initialization of available currencies
         protected override async Task OnInitializedAsync()
         {
-            AvailableCurrencies = UserService.GetCurrencies();  // Get currencies directly from UserService
+           // AvailableCurrencies = UserService.GetCurrencies();  // Get currencies directly from UserService
             if (AvailableCurrencies.Any())
             {
                 SelectedCurrencyId = AvailableCurrencies.First().CurrencyId;
@@ -20,9 +20,9 @@ namespace Expense_Tracking.Components.Pages
         }
 
         // Handle login logic
-        private void HandleLogin()
+       private bool HandleLogin()
         {
-            if (string.IsNullOrEmpty(Users.UserName) || string.IsNullOrEmpty(Users.Password) || SelectedCurrencyId == Guid.Empty)
+            /*if (string.IsNullOrEmpty(Users.UserName) || string.IsNullOrEmpty(Users.Password) || SelectedCurrencyId == Guid.Empty)
             {
                 ErrorMessge = "Please fill all fields.";
                 return;
@@ -30,7 +30,7 @@ namespace Expense_Tracking.Components.Pages
 
             Users.CurrencyId = SelectedCurrencyId; // Set the currency to the user object
 
-            bool isValid = UserService.Login(Users);
+          //  bool isValid = UserService.Login(Users);
             if (isValid)
             {
                 // Set the current user in the global state
@@ -40,7 +40,9 @@ namespace Expense_Tracking.Components.Pages
             else
             {
                 ErrorMessge = "Invalid login credentials.";
-            }
+            }*/
+
+            return false;
         }
     }
 }

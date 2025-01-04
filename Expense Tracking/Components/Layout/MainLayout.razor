@@ -25,10 +25,7 @@
 
     protected override void OnInitialized()
     {
-        if (_globalState.CurrentUser == null)
-        {
-            Nav.NavigateTo("/login");
-        }
+        UserService.SeedUsers();
     }
 
     private void LogoutHandler()
