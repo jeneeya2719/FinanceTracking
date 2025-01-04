@@ -34,10 +34,10 @@
         {
             <tr>
                 <td>
-                    <div class="form-check">
+                    <div class="form-check"> 
                         <input class="form-check-input me-0" type="checkbox" checked="@transactionItem.IsDone"
                                @onchange='() => ToggleDone(transactionItem)' />
-                    </div>
+                    </div>  
                 </td>
                 <td class='@(transactionItem.IsDone ? "text-decoration-line-through" : "")'>@transactionItem.TaskName</td>
                 <td>@transactionItem.DueDate.ToString("MMM dd, yyyy")</td>
@@ -103,7 +103,6 @@
 @code {
     [CascadingParameter]
     private GlobalState _globalState { get; set; }
-
     private bool _showEditTodoDialog { get; set; }
     private bool _showDeleteTodoDialog { get; set; }
     private List<Transaction> _transactions { get; set; } = new List<Transaction>();
@@ -121,43 +120,43 @@
 
     protected override async Task OnInitializedAsync()
     {
-        // try
-        // {
+        try
+        {
             
-        //     if (_globalState == null)
-        //     {
-        //         throw new InvalidOperationException("GlobalState is not available.");
-        //     }
+            if (_globalState == null)
+            {
+                throw new InvalidOperationException("GlobalState is not available.");
+            }
 
             
-        //     if (_globalState.CurrentUser == null)
-        //     {
-        //         throw new InvalidOperationException("CurrentUser is not available.");
-        //     }
-        //     Attempt to load transactions
-        //     await LoadTransactions();
-        // }
-        // catch (Exception ex)
-        // {
-        //     _generalErrorMessage = $"An error occurred while initializing: {ex.Message}";
-        // }
+            if (_globalState.CurrentUser == null)
+            {
+                throw new InvalidOperationException("CurrentUser is not available.");
+            }
+           // Attempt to load transactions
+            await LoadTransactions();
+        }
+        catch (Exception ex)
+        {
+            _generalErrorMessage = $"An error occurred while initializing: {ex.Message}";
+        }
     }
 
     private async Task LoadTransactions()
     {
-        // try
-        // {
-        //     if (_globalState == null || _globalState.CurrentUser == null)
-        //     {
-        //         throw new InvalidOperationException("User state is not available.");
-        //     }
+        try
+        {
+            if (_globalState == null || _globalState.CurrentUser == null)
+            {
+                throw new InvalidOperationException("User state is not available.");
+            }
 
-        //     _transactions = await TransactionService.GetAllAsync(_globalState.CurrentUser.UserId, _tabFilter, _sortBy, _sortDirection, _searchTerm);
-        // }
-        // catch (Exception ex)
-        // {
-        //     _generalErrorMessage = $"An error occurred while loading transactions: {ex.Message}";
-        // }
+            _transactions = await TransactionService.GetAllAsync(_globalState.CurrentUser.UserId, _tabFilter, _sortBy, _sortDirection, _searchTerm);
+        }
+        catch (Exception ex)
+        {
+            _generalErrorMessage = $"An error occurred while loading transactions: {ex.Message}";
+        }
     }
 
     private async Task SortByHandler(string sortByName)
@@ -221,6 +220,8 @@
         _todoModel.DueDate = DateTime.Parse(e.Value.ToString());
     }
 
+
+
     private async Task ToggleDone(Transaction tran)
     {
         try
@@ -257,7 +258,7 @@
             }
             catch (Exception e)
             {
-                _editTodoErrorMessage = e.Message;
+                _editTodoErrorMessage = e.Message; 
             }
         }
     }

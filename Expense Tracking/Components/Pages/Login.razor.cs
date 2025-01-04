@@ -33,6 +33,8 @@ namespace Expense_Tracking.Components.Pages
             bool isValid = UserService.Login(Users);
             if (isValid)
             {
+                // Set the current user in the global state
+                GlobalState.CurrentUser = Users;
                 Nav.NavigateTo("/dashboard");
             }
             else

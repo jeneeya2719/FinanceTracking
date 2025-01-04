@@ -1,17 +1,39 @@
-﻿@inherits LayoutComponentBase
+﻿@using Expense_Tracking.Services
+@inherits LayoutComponentBase
+
 
 <div class="page">
-   @*  <div class="sidebar">
-        <NavMenu />
-    </div> *@
+
+    @if (_globalState.CurrentUser != null)
+    {
+        <div class="sidebar">
+            <NavMenu Username="@_globalState.CurrentUser.UserName" UserRole="@_globalState.CurrentUser.Currency" LogoutHandler="LogoutHandler" />
+        </div>
+    }
 
     <main>
-        @* <div class="top-row px-4"> *@
-        @*     <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a> *@
-        @* </div> *@
-
         <article class="content px-4">
-            @Body
+            <CascadingValue Value="@_globalState">
+                @Body
+            </CascadingValue>
         </article>
     </main>
 </div>
+
+@code {
+    private GlobalState _globalState = new();
+
+    protected override void OnInitialized()
+    {
+        if (_globalState.CurrentUser == null)
+        {
+            Nav.NavigateTo("/login");
+        }
+    }
+
+    private void LogoutHandler()
+    {
+        _globalState.CurrentUser = null;
+        Nav.NavigateTo("/login");
+    }
+}
