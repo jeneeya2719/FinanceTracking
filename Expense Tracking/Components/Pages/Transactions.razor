@@ -1,129 +1,183 @@
-﻿@page "/transactions"
-@inject ITransactionService TransactionService
-@inject GlobalState _globalState
-@inject NavigationManager NavigationManager
+﻿@page "/transaction"
 
-<PageTitle>Transactions</PageTitle>
 
-<h3>Transactions</h3>
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <h1 class="navbar-brand mb-0 h1">Transactions</h1>
+    <button class="btn btn-primary" type="button" @onclick="OpenAddTodoDialog">
+        <span class="oi oi-plus" /> Add
+    </button>
+</nav>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class='nav-link btn @(_tabFilter == "All" ? "active" : "")' @onclick='() => TabFilter("All")'>All</a>
+    </li>
+    <li class="nav-item">
+        <a class='nav-link btn @(_tabFilter == "Due" ? "active" : "")' @onclick='() => TabFilter("Due")'>Due</a>
+    </li>
+    <li class="nav-item">
+        <a class='nav-link btn @(_tabFilter == "Done" ? "active" : "")' @onclick='() => TabFilter("Done")'>Done</a>
+    </li>
+</ul>
 
-@if (_generalErrorMessage != null)
-{
-    <div class="alert alert-danger">@_generalErrorMessage</div>
-}
-
-@if (_transactions == null || !_transactions.Any())
-{
-    <div class="alert alert-warning">No transactions available.</div>
-}
-
-<div class="d-flex justify-content-between mb-3">
-    <button class="btn btn-primary" @onclick="OpenAddTransactionModal">Add Transaction</button>
-
-    <div class="d-flex">
-        <input type="text" class="form-control mr-2" @bind="_searchTerm" placeholder="Search Transactions" @onchange="SearchTaskName" />
-        <select class="form-control" @bind="_tabFilter" @onchange="TabFilter">
-            <option value="All">All</option>
-            <option value="Due">Due</option>
-            <option value="Done">Done</option>
-        </select>
-    </div>
-</div>
-
-@if (_transactions != null)
-{
-    <table class="table table-striped">
-        <thead>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Status</th>
+            <th>Transaction Name</th>
+            <th>Due Date</th>
+            <th>Created At</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transactionItem in _transactions)
+        {
             <tr>
-                <th>Transaction Name</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>Actions</th>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input me-0" type="checkbox" checked="@transactionItem.IsDone"
+                               @onchange='() => ToggleDone(transactionItem)' />
+                    </div>
+                </td>
+                <td class='@(transactionItem.IsDone ? "text-decoration-line-through" : "")'>@transactionItem.TaskName</td>
+                <td>@transactionItem.DueDate.ToString("MMM dd, yyyy")</td>
+                <td>@transactionItem.CreatedAt.ToString("MMM dd, yyyy h:mm tt")</td>
+                <td>
+                    <button disabled="@transactionItem.IsDone" class="btn btn-outline-secondary" type="button"
+                            @onclick="() => OpenEditTodoDialog(transactionItem)">
+                        <span class="oi oi-pencil" /> Edit
+                    </button>
+                    <button class="btn btn-outline-danger" type="button" @onclick="() => OpenDeleteTodoDialog(transactionItem)">
+                        <span class="oi oi-delete" /> Delete
+                    </button>
+                </td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var transaction in _transactions)
-            {
-                <tr>
-                    <td>@transaction.Name</td>
-                    <td>@transaction.Date.ToShortDateString()</td>
-                    <td>@transaction.Status</td>
-                    <td>
-                        <button class="btn btn-secondary" @onclick="() => EditTransaction(transaction)">Edit</button>
-                        <button class="btn btn-danger" @onclick="() => DeleteTransaction(transaction)">Delete</button>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        }
+    </tbody>
+</table>
+
+@if (_showEditTodoDialog)
+{
+    <ModalDialog Title="@_dialogTitle" OnClose="@OnEditTodoDialogClose" OkLabel="@_dialogOkLabel">
+        <div class="form-floating">
+            <input id="taskName" type="text" class="form-control" @bind="_todoModel.TaskName" placeholder="Task Name" />
+            <label for="taskName">Task Name</label>
+        </div>
+        <div class="form-floating">
+            <label for="dueDate">Due Date</label>
+            <input id="dueDate" type="date" min='@DateTime.Today.ToString("yyyy-MM-dd")'
+                   value='@_todoModel.DueDate.ToString("yyyy-MM-dd")' @onchange="updateDate" class="form-control text-left"
+                   placeholder="Due Date">
+        </div>
+
+        @if (!string.IsNullOrEmpty(_editTodoErrorMessage))
+        {
+            <AlertMessage Type="danger" Message="@_editTodoErrorMessage" />
+        }
+
+        <div class="d-flex justify-content-between mt-3">
+            <button class="btn btn-secondary" @onclick="OnCancelEditTodo">Cancel</button>
+            <button class="btn btn-primary" @onclick="OnSaveEditTodo">Add</button>
+        </div>
+    </ModalDialog>
 }
 
-<ModalDialog @bind-Show="@_showEditTodoDialog" Title="Edit Transaction" OnSave="SaveTransaction">
-    <EditForm Model="@_selectedTransaction">
-        <DataAnnotationsValidator />
-        <ValidationSummary />
+@if (_showDeleteTodoDialog)
+{
+    <ModalDialog Title="Delete Todo" OnClose="@OnDeleteTodoDialogClose" OkLabel="Confirm">
+        <p>Are you sure you want to delete <strong>@_deleteTodo.TaskName</strong> task?</p>
+        @if (!string.IsNullOrEmpty(_deleteTodoErrorMessage))
+        {
+            <AlertMessage Type="danger" Message="@_deleteTodoErrorMessage" />
+        }
+    </ModalDialog>
+}
 
-        <div class="form-group">
-            <label for="transactionName">Transaction Name</label>
-            <InputText id="transactionName" class="form-control" @bind-Value="_selectedTransaction.Name" />
-        </div>
-        <div class="form-group">
-            <label for="transactionDate">Date</label>
-            <InputDate id="transactionDate" class="form-control" @bind-Value="_selectedTransaction.Date" />
-        </div>
-        <div class="form-group">
-            <label for="transactionStatus">Status</label>
-            <select class="form-control" @bind-Value="_selectedTransaction.Status">
-                <option value="Pending">Pending</option>
-                <option value="Completed">Completed</option>
-            </select>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Save</button>
-    </EditForm>
-</ModalDialog>
+@if (!string.IsNullOrEmpty(_generalErrorMessage))
+{
+    <div class="alert alert-danger" role="alert">
+        Error: @_generalErrorMessage
+    </div>
+}
 
 @code {
-    private List<Transaction> _transactions = new List<Transaction>();
-    private string _searchTerm = string.Empty;
+    [CascadingParameter]
+    private GlobalState _globalState { get; set; }
+
+    private bool _showEditTodoDialog { get; set; }
+    private bool _showDeleteTodoDialog { get; set; }
+    private List<Transaction> _transactions { get; set; } = new List<Transaction>();
+    private Transaction _deleteTodo { get; set; }
+    private string _dialogTitle { get; set; }
+    private string _dialogOkLabel { get; set; }
+    private string _editTodoErrorMessage { get; set; }
+    private string _deleteTodoErrorMessage { get; set; }
+    private string _generalErrorMessage { get; set; }
+    private Transaction _todoModel { get; set; }
     private string _tabFilter = "All";
-    private string _generalErrorMessage;
-    private bool _showEditTodoDialog;
-    private Transaction _selectedTransaction;
+    private string _sortBy = "dueDate";
+    private string _sortDirection = "ascending";
+    private string _searchTerm { get; set; } = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
-        try
-        {
-            if (_globalState == null || _globalState.CurrentUser == null)
-            {
-                _generalErrorMessage = "User state is not available.";
-                return;
-            }
+        // try
+        // {
+            
+        //     if (_globalState == null)
+        //     {
+        //         throw new InvalidOperationException("GlobalState is not available.");
+        //     }
 
-            await LoadTransactions();
-        }
-        catch (Exception ex)
-        {
-            _generalErrorMessage = $"An error occurred while initializing the component: {ex.Message}";
-        }
+            
+        //     if (_globalState.CurrentUser == null)
+        //     {
+        //         throw new InvalidOperationException("CurrentUser is not available.");
+        //     }
+        //     Attempt to load transactions
+        //     await LoadTransactions();
+        // }
+        // catch (Exception ex)
+        // {
+        //     _generalErrorMessage = $"An error occurred while initializing: {ex.Message}";
+        // }
     }
 
     private async Task LoadTransactions()
     {
+        // try
+        // {
+        //     if (_globalState == null || _globalState.CurrentUser == null)
+        //     {
+        //         throw new InvalidOperationException("User state is not available.");
+        //     }
+
+        //     _transactions = await TransactionService.GetAllAsync(_globalState.CurrentUser.UserId, _tabFilter, _sortBy, _sortDirection, _searchTerm);
+        // }
+        // catch (Exception ex)
+        // {
+        //     _generalErrorMessage = $"An error occurred while loading transactions: {ex.Message}";
+        // }
+    }
+
+    private async Task SortByHandler(string sortByName)
+    {
         try
         {
-            if (_globalState == null || _globalState.CurrentUser == null)
+            if (_sortBy == sortByName)
             {
-                throw new InvalidOperationException("User state is not available.");
+                _sortDirection = _sortDirection == "ascending" ? "descending" : "ascending";
             }
-
-            _transactions = await TransactionService.GetAllAsync(_globalState.CurrentUser.UserId, _tabFilter, _searchTerm);
-            Console.WriteLine($"Transactions loaded: {_transactions.Count} items.");
+            else
+            {
+                _sortBy = sortByName;
+                _sortDirection = "ascending";
+            }
+            await LoadTransactions();
         }
         catch (Exception ex)
         {
-            _generalErrorMessage = $"An error occurred while loading transactions: {ex.Message}";
+            _generalErrorMessage = $"An error occurred while sorting: {ex.Message}";
         }
     }
 
@@ -140,43 +194,110 @@
         }
     }
 
-    private void TabFilter(ChangeEventArgs e)
+    private void OpenAddTodoDialog()
     {
-        _tabFilter = e.Value.ToString();
-        LoadTransactions();
-    }
-
-    private void OpenAddTransactionModal()
-    {
-        _selectedTransaction = new Transaction();
+        _dialogTitle = "Add Todo";
+        _dialogOkLabel = "Add";
+        _todoModel = new Transaction { Id = Guid.Empty };
         _showEditTodoDialog = true;
     }
 
-    private void EditTransaction(Transaction transaction)
+    private void OpenEditTodoDialog(Transaction editTodo)
     {
-        _selectedTransaction = transaction;
+        _dialogTitle = "Edit Todo";
+        _dialogOkLabel = "Save";
+        _todoModel = editTodo;
         _showEditTodoDialog = true;
     }
 
-    private void DeleteTransaction(Transaction transaction)
+    private void OpenDeleteTodoDialog(Transaction transactionItem)
     {
-        // Implement delete logic here
+        _deleteTodo = transactionItem;
+        _showDeleteTodoDialog = true;
     }
 
-    private async Task SaveTransaction()
+    private void updateDate(ChangeEventArgs e)
+    {
+        _todoModel.DueDate = DateTime.Parse(e.Value.ToString());
+    }
+
+    private async Task ToggleDone(Transaction tran)
     {
         try
         {
-            if (_selectedTransaction != null)
-            {
-                // Save transaction logic here
-                _showEditTodoDialog = false;
-                await LoadTransactions();
-            }
+            tran.IsDone = !tran.IsDone;
+            _transactions = await TransactionService.UpdateAsync(_globalState.CurrentUser.UserId, tran.Id, tran.TaskName, tran.DueDate, tran.IsDone);
         }
         catch (Exception ex)
         {
-            _generalErrorMessage = $"An error occurred while saving the transaction: {ex.Message}";
+            _generalErrorMessage = $"An error occurred while toggling task status: {ex.Message}";
         }
+    }
+
+    private async Task OnEditTodoDialogClose(bool isCancel)
+    {
+        if (isCancel)
+        {
+            _showEditTodoDialog = false;
+        }
+        else
+        {
+            try
+            {
+                _editTodoErrorMessage = string.Empty;
+                if (_todoModel.Id == Guid.Empty)
+                {
+                    _transactions = await TransactionService.CreateAsync(_globalState.CurrentUser.UserId, _todoModel.TaskName, _todoModel.DueDate);
+                }
+                else
+                {
+                    _transactions = await TransactionService.UpdateAsync(_globalState.CurrentUser.UserId, _todoModel.Id, _todoModel.TaskName, _todoModel.DueDate, _todoModel.IsDone);
+                }
+                _showEditTodoDialog = false;
+            }
+            catch (Exception e)
+            {
+                _editTodoErrorMessage = e.Message;
+            }
+        }
+    }
+
+    private async Task OnDeleteTodoDialogClose(bool isCancel)
+    {
+        if (isCancel)
+        {
+            _showDeleteTodoDialog = false;
+            _deleteTodo = null;
+        }
+        else
+        {
+            try
+            {
+                _deleteTodoErrorMessage = string.Empty;
+                _transactions = await TransactionService.DeleteAsync(_globalState.CurrentUser.UserId, _deleteTodo.Id);
+                _showDeleteTodoDialog = false;
+                _deleteTodo = null;
+            }
+            catch (Exception e)
+            {
+                _deleteTodoErrorMessage = e.Message;
+            }
+        }
+    }
+
+    private void TabFilter(string tab)
+    {
+        _tabFilter = tab;
+        LoadTransactions();
+    }
+
+    private void OnCancelEditTodo()
+    {
+        _showEditTodoDialog = false;
+    }
+
+    private async Task OnSaveEditTodo()
+    {
+        await OnEditTodoDialogClose(false);
     }
 }

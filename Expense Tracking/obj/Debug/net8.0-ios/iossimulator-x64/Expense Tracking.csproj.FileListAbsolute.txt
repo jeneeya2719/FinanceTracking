@@ -341,3 +341,9 @@ C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-i
 C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\Expense Tracking.pdb
 C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\Expense Tracking.genruntimeconfig.cache
 C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\ref\Expense Tracking.dll
+C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.Extensions.Localization.dll
+C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\bin\Debug\net8.0-ios\iossimulator-x64\MudBlazor.dll
+C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\scopedcss\Components\Pages\Home.razor.rz.scp.css
+C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\scopedcss\Components\Pages\Login.razor.rz.scp.css
+C:\Projects\ExpenseTracking\Expense Tracking\Expense Tracking\obj\Debug\net8.0-ios\iossimulator-x64\scopedcss\Components\Pages\Transactions.razor.rz.scp.css
